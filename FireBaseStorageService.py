@@ -6,7 +6,15 @@ import os
 
 load_dotenv()
 
-cred = credentials.Certificate(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
+firebase_json = os.getenv("FIREBASE_CONFIG")
+
+if not firebase_json:
+    raise ValueError("Missing FIREBASE_CONFIG environment variable")
+
+firebase_config = json.loads(firebase_json)
+cred = credentials.Certificate(firebase_config)
+
+
 firebase_admin.initialize_app(cred, {
        'storageBucket': 'devskillsets-2a367.firebasestorage.app'
    })
