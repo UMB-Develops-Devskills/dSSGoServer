@@ -31,4 +31,5 @@ def getJobMarketData(fileName):
     file_content = blob.download_as_text()
     
     data = json.loads(file_content)
+    print("Sending :" + data)
     return data

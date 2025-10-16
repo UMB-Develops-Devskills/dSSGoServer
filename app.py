@@ -30,6 +30,7 @@ async def root():
 
 @app.get("/api/getJobData/{fileName}")
 async def getJobData(fileName):
+    print("getJobData Hit: "+ fileName)
     return getJobMarketData(fileName)
 
 
