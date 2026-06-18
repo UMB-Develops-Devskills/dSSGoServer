@@ -34,7 +34,7 @@ func main() {
 	// Connect to Cloud sql 
 	db, cleanup, err := cloudsql.ConnectDB(ctx)
 	if err != nil {
-		log.Fatalf("DB connection failed: %v", err)
+		log.Printf("DB connection failed: %v", err)
 	}
 	defer cleanup()
 	defer db.Close()
@@ -68,5 +68,8 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	http.ListenAndServe(":"+port, r)
+	log.Printf("Starting server on :%s", port)
+    if err := http.ListenAndServe(":"+port, r); err != nil {
+      log.Printf("Server failed: %v", err)
+  }
 }
