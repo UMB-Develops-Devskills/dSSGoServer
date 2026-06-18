@@ -1,5 +1,2 @@
 .env
-firebase-service-account.json
-.env
-*.json
-__pycache__/
+makefile
