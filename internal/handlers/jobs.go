@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"encoding/json"
-	"log"
+	//"log"
 	"net/http"
 
 	//"os"
 	//"github.com/go-chi/chi/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 )
 
 // job data general
@@ -27,10 +27,10 @@ type TaskHandler struct {
 
 // This function returns all the jobs from the database 
 func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
-	err := godotenv.Load()
+	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
-	}
+	}*/
 	//dataLakeKey := os.Getenv("DATA_LAKE_API")
 	rows, err := h.DB.Query(r.Context(), "SELECT id, title, role, location, time FROM jobs")
 	if err != nil {

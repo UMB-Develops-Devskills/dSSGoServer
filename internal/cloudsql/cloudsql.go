@@ -6,17 +6,17 @@ import (
 	"os"
 	"net"
 	"log"
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 	"cloud.google.com/go/cloudsqlconn"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 // This function creates the connection pool to CLOUDSQL
 func ConnectDB(ctx context.Context) (*pgxpool.Pool, func() error, error) {
-	err := godotenv.Load()
+	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
-	}
+	}*/
 	instanceConnection := os.Getenv("INSTANCE_CONNECTION_NAME")
 	dbUser := os.Getenv("DB_USER")
 	dbPass := os.Getenv("DB_PASS")

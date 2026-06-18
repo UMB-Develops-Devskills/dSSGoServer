@@ -10,7 +10,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	//"github.com/go-chi/docgen"
 	"github.com/go-chi/render"
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 	"github.com/bettaburger/dSSGoServer/internal/handlers"
 	"github.com/bettaburger/dSSGoServer/internal/cloudsql"
 
@@ -25,10 +25,10 @@ func paginate(next http.Handler) http.Handler {
 }
 
 func main() {
-	err := godotenv.Load()
+	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
-	}
+	}*/
 	ctx := context.Background()
 	
 	// Connect to Cloud sql 
@@ -63,9 +63,10 @@ func main() {
 		r.Get("/jobs", handler.GetJobData) // GET /api/jobs
 		// add more methods later
 	})
+	// cloudsql runs on default port 8080
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "8080"
 	}
 	http.ListenAndServe(":"+port, r)
 }
