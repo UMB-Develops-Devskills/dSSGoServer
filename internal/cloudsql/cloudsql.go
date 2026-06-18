@@ -12,7 +12,7 @@ import (
 )
 
 // This function creates the connection pool to CLOUDSQL
-func connectDB(ctx context.Context) (*pgxpool.Pool, func() error, error) {
+func ConnectDB(ctx context.Context) (*pgxpool.Pool, func() error, error) {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")

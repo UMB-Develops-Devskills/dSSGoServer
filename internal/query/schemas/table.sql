@@ -5,7 +5,7 @@ CREATE TABLE jobs (
   title TEXT NOT NULL, 
   role TEXT NOT NULL, 
   location TEXT, 
-  time_period TEXT
+  time text
 );
 
 CREATE TABLE companies (
