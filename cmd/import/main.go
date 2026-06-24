@@ -20,11 +20,11 @@ type Response struct {
 type Job struct {
 	ID string `json:"id"` 
 	Title string `json:"title"`
-	Company string `json:"company"`
+	Company string `json:"company_name"`
 	JobFunction string `json:"job_function"`
 	Role string `json:"role"`
 	Location []string `json:"locations"`
-	Skills []string `json:"skills"`
+	Skills []string `json:"required_skills"`
 }
 
 func main() {

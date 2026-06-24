@@ -5,7 +5,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"time"
+	//"time"
 	"net/http"
 	"os"
 	"flag"
@@ -43,7 +43,7 @@ func main() {
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 	r.Use(render.SetContentType(render.ContentTypeJSON))
-	r.Use(middleware.Timeout(120 * time.Second)) // timeout value of 2 minute 
+	//r.Use(middleware.Timeout(120 * time.Second)) // timeout value of 2 minute, could mess w container deployment 
 
 	// endpoints
 	r.Get("/", func(w http.ResponseWriter, r*http.Request) {w.Write([]byte("This is the devskills root server"))})
