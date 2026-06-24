@@ -1,18 +1,16 @@
 # This table is for general query
 # location will be USA by default 
 CREATE TABLE jobs (
-  id SERIAL PRIMARY KEY, 
+  id TEXT PRIMARY KEY, 
   title TEXT NOT NULL, 
+  company TEXT,
+  job_function TEXT,
   role TEXT NOT NULL, 
-  location TEXT, 
-  time text
+  locations TEXT[], 
+  skills TEXT[]
 );
 
-CREATE TABLE companies (
-  id SERIAL PRIMARY KEY,
-  name TEXT UNIQUE NOT NULL
-);
-
+# Required skills
 CREATE TABLE skills (
   id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL

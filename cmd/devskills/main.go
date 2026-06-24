@@ -1,5 +1,7 @@
 package main
 
+// This package starts the API server 
+
 import (
 	"fmt"
 	"log"
@@ -77,6 +79,8 @@ func main() {
 		r.Get("/jobs", handler.GetJobData) // GET /api/jobs
 		// add more methods later
 	})
+
+	//r.Mount("/admin", adminRouter())
 
 	// cloudsql runs on default port 8080
 	port := os.Getenv("PORT")

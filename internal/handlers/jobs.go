@@ -11,13 +11,23 @@ import (
 	//"github.com/joho/godotenv"
 )
 
-// job data general
+// Datajoblake response
+type Response struct {
+	Found int `json:"found"`
+	Page int `json:"page"`
+	PerPage int `json:"per_page"`
+	Jobs []Job `json:"jobs"`
+}
+
+// job data general, usa based 
 type Job struct {
-	ID uint16 `json:"id"`
-	Title string `json:"Title"`
+	ID string `json:"id"` 
+	Title string `json:"title"`
+	Company string `json:"company"`
+	JobFunction string `json:"job_function"`
 	Role string `json:"role"`
-	Location string `json:"location"`
-	Time string `json:"time"`
+	Location []string `json:"locations"`
+	Skills []string `json:"skills"`
 }
 
 // This struct holds dependencies for http handlers
@@ -25,14 +35,13 @@ type TaskHandler struct {
 	DB *pgxpool.Pool
 }
 
-// This function returns all the jobs from the database 
+// This function requests all the jobs from the database 
 func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}*/
-	//dataLakeKey := os.Getenv("DATA_LAKE_API")
-	rows, err := h.DB.Query(r.Context(), "SELECT id, title, role, location, time FROM jobs")
+	rows, err := h.DB.Query(r.Context(), "SELECT id, title, company, job_function, role, locations, skills FROM jobs")
 	if err != nil {
 		http.Error(w, "failed to query jobs", http.StatusInternalServerError)
 		return
@@ -42,7 +51,7 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	var jobs []Job
 	for rows.Next() {
 		var j Job
-		if err := rows.Scan(&j.ID, &j.Title, &j.Role, &j.Location, &j.Time); err != nil {
+		if err := rows.Scan(&j.ID, &j.Title, &j.Company, &j.JobFunction, &j.Role, &j.Location, &j.Skills); err != nil {
 			http.Error(w, "failed to scan job", http.StatusInternalServerError)
 			return
 		}
