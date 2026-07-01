@@ -38,13 +38,35 @@ type TaskHandler struct {
 	DB *pgxpool.Pool
 }
 
-// This function requests all the jobs from the database 
+func nullIfEmpty(s string) any {
+	if s == "" {
+		return nil
+	}
+	return s
+}
+
+// This function requests jobs from the database 
 func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}*/
-	rows, err := h.DB.Query(r.Context(), "SELECT id, title, company, job_function, role, locations, skills FROM jobs")
+	role := r.URL.Query().Get("role")
+	//title := r.URL.Query().Get("title") // ex. senior, intern...
+	//location := r.URL.Query().Get("locations")
+	company := r.URL.Query().Get("company")
+	country := r.URL.Query().Get("country")
+	month := r.URL.Query().Get("month")
+	year := r.URL.Query().Get("year")
+
+	query := `SELECT id, title, company, job_function, role, locations, skills FROM jobs 
+	WHERE ($1 IS NULL OR country = $1) 
+	AND ($2 IS NULL OR company = $2) 
+	AND ($3 IS NULL OR role = $3) 
+	AND ($4 IS NULL OR month = $4) 
+	AND ($5 IS NULL OR year = $5);`
+	
+	rows, err := h.DB.Query(r.Context(), query, nullIfEmpty(country), nullIfEmpty(company), nullIfEmpty(role), nullIfEmpty(month), nullIfEmpty(year))
 	if err != nil {
 		http.Error(w, "failed to query jobs", http.StatusInternalServerError)
 		return
@@ -68,12 +90,3 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(jobs)
 }
-
-// This function creates a new job query into the db
-
-
-// This function returns jobs by [specified query]
-// This function returns jobs by ID
-// This function returns jobs by Role
-// This function returns jobs by title 
-// This function returns jobs by location

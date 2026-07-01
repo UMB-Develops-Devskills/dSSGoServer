@@ -77,7 +77,6 @@ func main() {
 	r.Route("/api", func(r chi.Router) {
 		//r.With(paginate).Get("/", handlers.GetJobData)
 		r.Get("/jobs", handler.GetJobData) // GET /api/jobs
-		// add more methods later
 	})
 
 	//r.Mount("/admin", adminRouter())
