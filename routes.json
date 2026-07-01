@@ -1,0 +1,105 @@
+{
+  "router": {
+    "middlewares": [
+      {
+        "pkg": "github.com/go-chi/chi/v5/middleware",
+        "func": "RequestID",
+        "comment": "RequestID is a middleware that injects a request ID into the context of each\nrequest. A request ID is a string of the form \"host.example.com/random-0001\",\nwhere \"random\" is a base62 random string that uniquely identifies this go\nprocess, and where the last number is an atomically incremented request\ncounter.\n",
+        "file": "/Users/stephanieha/go/pkg/mod/github.com/go-chi/chi/v5@v5.3.0/middleware/request_id.go",
+        "line": 67
+      },
+      {
+        "pkg": "github.com/go-chi/chi/v5/middleware",
+        "func": "Logger",
+        "comment": "Logger is a middleware that logs the start and end of each request, along\nwith some useful data about what was requested, what the response status was,\nand how long it took to return. When standard output is a TTY, Logger will\nprint in color, otherwise it will print in black and white. Logger prints a\nrequest ID if one is provided.\n\nAlternatively, look at https://github.com/goware/httplog for a more in-depth\nhttp logger with structured logging support.\n\nIMPORTANT NOTE: Logger should go before any other middleware that may change\nthe response, such as middleware.Recoverer. Example:\n\n\tr := chi.NewRouter()\n\tr.Use(middleware.Logger)        // \u003c--\u003c\u003c Logger should come before Recoverer\n\tr.Use(middleware.Recoverer)\n\tr.Get(\"/\", handler)\n",
+        "file": "/Users/stephanieha/go/pkg/mod/github.com/go-chi/chi/v5@v5.3.0/middleware/logger.go",
+        "line": 39
+      },
+      {
+        "pkg": "github.com/go-chi/chi/v5/middleware",
+        "func": "Recoverer",
+        "comment": "Recoverer is a middleware that recovers from panics, logs the panic (and a\nbacktrace), and returns a HTTP 500 (Internal Server Error) status if\npossible. Recoverer prints a request ID if one is provided.\n\nAlternatively, look at https://github.com/go-chi/httplog middleware pkgs.\n",
+        "file": "/Users/stephanieha/go/pkg/mod/github.com/go-chi/chi/v5@v5.3.0/middleware/recoverer.go",
+        "line": 22
+      },
+      {
+        "pkg": "",
+        "func": "main.main.SetContentType.func6",
+        "comment": "",
+        "file": "/Users/stephanieha/go/pkg/mod/github.com/go-chi/render@v1.0.3/content_type.go",
+        "line": 49,
+        "anonymous": true,
+        "unresolvable": true
+      },
+      {
+        "pkg": "",
+        "func": "main.main.Timeout.func7",
+        "comment": "",
+        "file": "/Users/stephanieha/go/pkg/mod/github.com/go-chi/chi/v5@v5.3.0/middleware/timeout.go",
+        "line": 33,
+        "anonymous": true,
+        "unresolvable": true
+      }
+    ],
+    "routes": {
+      "/": {
+        "handlers": {
+          "GET": {
+            "middlewares": [],
+            "method": "GET",
+            "pkg": "",
+            "func": "main.main.func1",
+            "comment": "endpoints\n",
+            "file": "/Users/stephanieha/projects/dSSGoServer/cmd/devskills/main.go",
+            "line": 47,
+            "anonymous": true
+          }
+        }
+      },
+      "/health": {
+        "handlers": {
+          "GET": {
+            "middlewares": [],
+            "method": "GET",
+            "pkg": "",
+            "func": "main.main.func2",
+            "comment": "",
+            "file": "/Users/stephanieha/projects/dSSGoServer/cmd/devskills/main.go",
+            "line": 48,
+            "anonymous": true
+          }
+        }
+      },
+      "/panic": {
+        "handlers": {
+          "GET": {
+            "middlewares": [],
+            "method": "GET",
+            "pkg": "",
+            "func": "main.main.func4",
+            "comment": "",
+            "file": "/Users/stephanieha/projects/dSSGoServer/cmd/devskills/main.go",
+            "line": 53,
+            "anonymous": true
+          }
+        }
+      },
+      "/ping": {
+        "handlers": {
+          "GET": {
+            "middlewares": [],
+            "method": "GET",
+            "pkg": "",
+            "func": "main.main.func3",
+            "comment": "",
+            "file": "/Users/stephanieha/projects/dSSGoServer/cmd/devskills/main.go",
+            "line": 52,
+            "anonymous": true
+          }
+        }
+      }
+    }
+  }
+}
+
+

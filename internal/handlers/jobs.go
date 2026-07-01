@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
-	//"log"
+	"log"
 	"net/http"
 
 	//"os"
@@ -11,13 +11,27 @@ import (
 	//"github.com/joho/godotenv"
 )
 
-// job data general
+// Datajoblake response
+type Response struct {
+	Found int `json:"found"`
+	Page int `json:"page"`
+	PerPage int `json:"per_page"`
+	Jobs []Job `json:"jobs"`
+}
+
+// job data general, usa based 
 type Job struct {
-	ID uint16 `json:"id"`
-	Title string `json:"Title"`
+	//Country string `json:"file_country"`
+ //Month string `json:"file_month"`
+  //Year string `json:"file_year"`
+	ID string `json:"id"` 
+	Title string `json:"title"`
+	Company string `json:"company"`
+	JobFunction string `json:"job_function"`
 	Role string `json:"role"`
-	Location string `json:"location"`
-	Time string `json:"time"`
+	Seniority []string `json:"seniority"`
+	Location []string `json:"locations"`
+	Skills []string `json:"skills"`
 }
 
 // This struct holds dependencies for http handlers
@@ -25,15 +39,41 @@ type TaskHandler struct {
 	DB *pgxpool.Pool
 }
 
-// This function returns all the jobs from the database 
+func nullIfEmpty(s string) any {
+	if s == "" {
+		return nil
+	}
+	return s
+}
+
+// This function requests jobs from the database 
 func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}*/
-	//dataLakeKey := os.Getenv("DATA_LAKE_API")
-	rows, err := h.DB.Query(r.Context(), "SELECT id, title, role, location, time FROM jobs")
+	role := r.URL.Query().Get("role")
+	seniority := r.URL.Query().Get("seniority")
+	//title := r.URL.Query().Get("title") // ex. senior, intern...
+	//location := r.URL.Query().Get("locations")
+	company := r.URL.Query().Get("company")
+	country := r.URL.Query().Get("country")
+	month := r.URL.Query().Get("month")
+	year := r.URL.Query().Get("year")
+	// run examples: 
+	// http://localhost:8080/api/jobs?country=usa&role=Program+Manager&month=june&year=2026
+	// http://localhost:8080/api/jobs?country=usa&company=SpaceX
+	query := `SELECT id, title, company, job_function, role, seniority, locations, skills FROM jobs 
+	WHERE ($1::text IS NULL OR country = $1)
+  AND ($2::text IS NULL OR company = $2)
+  AND ($3::text IS NULL OR role = $3)
+	AND ($4::text IS NULL OR seniority = $4)
+  AND ($5::text IS NULL OR month = $5)
+  AND ($6::text IS NULL OR year = $6);`
+	
+	rows, err := h.DB.Query(r.Context(), query, nullIfEmpty(country), nullIfEmpty(company), nullIfEmpty(role), nullIfEmpty(seniority), nullIfEmpty(month), nullIfEmpty(year))
 	if err != nil {
+		log.Printf("Query error: %v", err)
 		http.Error(w, "failed to query jobs", http.StatusInternalServerError)
 		return
 	}
@@ -42,7 +82,8 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	var jobs []Job
 	for rows.Next() {
 		var j Job
-		if err := rows.Scan(&j.ID, &j.Title, &j.Role, &j.Location, &j.Time); err != nil {
+		if err := rows.Scan(&j.ID, &j.Title, &j.Company, &j.JobFunction, &j.Role, &j.Seniority, &j.Location, &j.Skills); err != nil {
+			log.Printf("scan error: %v", err)
 			http.Error(w, "failed to scan job", http.StatusInternalServerError)
 			return
 		}
@@ -56,12 +97,3 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(jobs)
 }
-
-// This function creates a new job query into the db
-
-
-// This function returns jobs by [specified query]
-// This function returns jobs by ID
-// This function returns jobs by Role
-// This function returns jobs by title 
-// This function returns jobs by location
