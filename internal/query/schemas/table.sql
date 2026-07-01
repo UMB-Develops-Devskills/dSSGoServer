@@ -1,6 +1,9 @@
 # This table is for general query
 # location will be USA by default 
 CREATE TABLE jobs (
+  country TEXT,
+  month TEXT,
+  year TEXT, 
   id TEXT PRIMARY KEY, 
   title TEXT NOT NULL, 
   company TEXT,

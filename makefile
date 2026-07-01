@@ -9,4 +9,4 @@ routes:
 
 # script
 script:
-	go run cmd/import/main.go data/india/jobs-default-india-june-2026-page4.json
+	go run cmd/import/main.go data/usa/jobs-default-usa-june-2026-page1.json

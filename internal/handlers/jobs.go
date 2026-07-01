@@ -67,7 +67,7 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	WHERE ($1::text IS NULL OR country = $1)
   AND ($2::text IS NULL OR company = $2)
   AND ($3::text IS NULL OR role = $3)
-	AND ($4::text IS NULL OR seniority = $4)
+	AND ($4::text IS NULL OR $4 = ANY(seniority))
   AND ($5::text IS NULL OR month = $5)
   AND ($6::text IS NULL OR year = $6);`
 	
