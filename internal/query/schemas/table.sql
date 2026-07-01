@@ -5,6 +5,7 @@ CREATE TABLE jobs (
   title TEXT NOT NULL, 
   company TEXT,
   job_function TEXT,
+  seniority TEXT[],
   role TEXT NOT NULL, 
   locations TEXT[], 
   skills TEXT[]
