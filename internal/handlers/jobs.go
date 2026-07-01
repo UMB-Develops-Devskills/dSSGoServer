@@ -21,6 +21,9 @@ type Response struct {
 
 // job data general, usa based 
 type Job struct {
+	//Country string `json:"file_country"`
+ //Month string `json:"file_month"`
+  //Year string `json:"file_year"`
 	ID string `json:"id"` 
 	Title string `json:"title"`
 	Company string `json:"company"`

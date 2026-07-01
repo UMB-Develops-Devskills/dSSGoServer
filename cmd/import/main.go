@@ -3,10 +3,23 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"os"
 	"log"
+	"os"
+	"path/filepath"
+	"strings"
+	"fmt"
 	"github.com/bettaburger/dSSGoServer/internal/cloudsql"
 )
+
+/* filename structure
+EX: jobs-default-usa-june-2026-page1..n.json
+See /data for files
+*/
+type DataFile struct {
+	Country string
+	Month string	// what month the data was collected
+	Year string	// what year the data was collected
+}
 
 // Datajoblake response
 type Response struct {
@@ -27,12 +40,27 @@ type Job struct {
 	Skills []string `json:"required_skills"`
 }
 
+// this function parses the filepath, retrieves the file and returns Datafile{}
+func ParseDataFile(filename string) (DataFile, error) {
+	base := filepath.Base(filename)
+	base = strings.TrimSuffix(base, filepath.Ext(base)) // rm extension
+	// []string{"jobs", ...}
+	str := strings.Split(base, "-")
+	if len(str) != 6 {
+		return DataFile{}, fmt.Errorf("filename is not in proper structure: %s", base)
+	}
+	return DataFile {Country: strings.ToLower(str[2]), Month: strings.ToLower(str[3]), Year: str[4]}, nil
+}
+
 func main() {
 	filename := os.Args[1]
-
 	data, err := os.ReadFile(filename)
 	if err != nil {
 		log.Printf("failed to read the file %v", err)
+	}
+	metadata, err := ParseDataFile(filename)
+	if err != nil {
+		log.Printf("failed to parse the file %v", err)
 	}
 	var resp Response 
 	if err := json.Unmarshal(data, &resp); err != nil {
@@ -49,7 +77,7 @@ func main() {
 
 	i := 0
 	for _, j := range resp.Jobs {
-		_, err := db.Exec(ctx, `INSERT INTO jobs (id, title, company, job_function, role, locations, skills) VALUES ($1,$2,$3,$4,$5,$6,$7)`, j.ID, j.Title, j.Company, j.JobFunction, j.Role, j.Location, j.Skills)
+		_, err := db.Exec(ctx, `INSERT INTO jobs (country, month, year, id, title, company, job_function, role, locations, skills) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`, metadata.Country, metadata.Month, metadata.Year, j.ID, j.Title, j.Company, j.JobFunction, j.Role, j.Location, j.Skills)
 		if err != nil {
 			log.Printf("failed importing script %s: %v", j.ID, err)
 			continue

@@ -16,7 +16,7 @@ func ConnectDB(ctx context.Context) (*pgxpool.Pool, func() error, error) {
 	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
-	}*/ 
+	} uncomment if you want to run locally, otherwise leave it #deployment-2 problem */ 
 	instanceConnection := os.Getenv("INSTANCE_CONNECTION_NAME")
 	dbUser := os.Getenv("DB_USER")
 	dbPass := os.Getenv("DB_PASS")
