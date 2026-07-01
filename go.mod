@@ -1,4 +1,4 @@
-module github.com/bettaburger/dSSGoServer
+module github.com/UMB-Develops-Devskills/dSSGoServer
 
 go 1.26.2
 

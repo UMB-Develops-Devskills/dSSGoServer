@@ -16,8 +16,8 @@ import (
 	"github.com/go-chi/render"
 	//"github.com/joho/godotenv"
 	"github.com/go-chi/docgen"
-	"github.com/bettaburger/dSSGoServer/internal/handlers"
-	"github.com/bettaburger/dSSGoServer/internal/cloudsql"
+	"github.com/UMB-Develops-Devskills/dSSGoServer/internal/handlers"
+	"github.com/UMB-Develops-Devskills/dSSGoServer/internal/cloudsql"
 
 )
 
