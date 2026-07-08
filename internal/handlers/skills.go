@@ -32,12 +32,12 @@ func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	AND ($4::text IS NULL OR company = $4)
 	AND ($5::text IS NULL OR month = $5)
 	AND ($6::text IS NULL OR year = $6)
-	AND ($7::text IS NULL OR sc.category = $7)
+	AND ($7::text IS NULL OR LOWER(sc.category) = LOWER($7))
 	GROUP BY sc.category, sc.subcategory, u.skill
 	ORDER BY COUNT(*) DESC
 	LIMIT $8;`
 
-	rows, err := h.DB.Query(r.Context(), query, nullIfEmpty(role), nullIfEmpty(country), nullIfEmpty(seniority), nullIfEmpty(company), nullIfEmpty(month), nullIfEmpty(year), nullIfEmpty(limit), nullIfEmpty(category))
+	rows, err := h.DB.Query(r.Context(), query, nullIfEmpty(role), nullIfEmpty(country), nullIfEmpty(seniority), nullIfEmpty(company), nullIfEmpty(month), nullIfEmpty(year), nullIfEmpty(category), nullIfEmpty(limit))
 	if err != nil {
 		log.Printf("Skill trends query error: %v", err)
 		http.Error(w, "failed to query skills trends", http.StatusInternalServerError)

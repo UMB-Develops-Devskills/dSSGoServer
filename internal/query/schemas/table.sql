@@ -4,14 +4,15 @@ CREATE TABLE jobs (
   country TEXT,
   month TEXT,
   year TEXT, 
-  id TEXT PRIMARY KEY, 
+  id TEXT, 
   title TEXT NOT NULL, 
   company TEXT,
   job_function TEXT,
   seniority TEXT[],
   role TEXT NOT NULL, 
   locations TEXT[], 
-  skills TEXT[]
+  skills TEXT[],
+  PRIMARY KEY (id, month, year)
 );
 
 SELECT
@@ -36,3 +37,12 @@ WHERE country = 'usa'
 GROUP BY location
 ORDER BY total_number DESC
 
+SELECT COUNT(*)
+FROM jobs
+WHERE country='usa'
+AND month='july'
+AND year='2026';
+
+DELETE FROM jobs
+WHERE month = 'july'
+AND year = '2026';

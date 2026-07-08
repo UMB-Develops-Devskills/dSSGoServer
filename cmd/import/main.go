@@ -78,7 +78,7 @@ func main() {
 
 	i := 0
 	for _, j := range resp.Jobs {
-		_, err := db.Exec(ctx, `INSERT INTO jobs (country, month, year, id, title, company, job_function, role, seniority, locations, skills) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`, metadata.Country, metadata.Month, metadata.Year, j.ID, j.Title, j.Company, j.JobFunction, j.Role, j.Seniority, j.Location, j.Skills)
+		_, err := db.Exec(ctx, `INSERT INTO jobs (country, month, year, id, title, company, job_function, role, seniority, locations, skills) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) ON CONFLICT (id, month, year) DO NOTHING`, metadata.Country, metadata.Month, metadata.Year, j.ID, j.Title, j.Company, j.JobFunction, j.Role, j.Seniority, j.Location, j.Skills)
 		if err != nil {
 			log.Printf("failed importing script %s: %v", j.ID, err)
 			continue
