@@ -25,3 +25,14 @@ WHERE country = 'usa'
 GROUP BY skill
 ORDER BY total_number DESC
 
+SELECT
+    location,
+    COUNT(*) AS total_number
+FROM jobs,
+UNNEST(locations) AS location
+WHERE country = 'usa'
+  AND month = 'june'
+  AND year = '2026'
+GROUP BY location
+ORDER BY total_number DESC
+

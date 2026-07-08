@@ -29,7 +29,15 @@ type Job struct {
 
 // skill trends struct 
 type SkillTrend struct {
+	Category string `json:"category"`
+	Subcategory string `json:"subcategory"`
 	Skill string `json:"skill"`
+	Count int `json:"count"`
+}
+
+// job location trends struct
+type LocationTrend struct {
+	Location string `json:"Location"`
 	Count int `json:"count"`
 }
 

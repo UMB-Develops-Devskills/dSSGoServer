@@ -79,6 +79,7 @@ func main() {
 		r.Get("/jobs", handler.GetJobData) // GET /api/jobs
 		r.Route("/trends", func(r chi.Router) {
 			r.Get("/skills", handler.GetSkillTrends) // GET /api/trends/skills
+			r.Get("/locations", handler.GetWorkLocationTrend) // GET /api/trends/locations
 		})
 	})
 
