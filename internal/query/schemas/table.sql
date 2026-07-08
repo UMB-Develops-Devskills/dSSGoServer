@@ -14,22 +14,14 @@ CREATE TABLE jobs (
   skills TEXT[]
 );
 
-# Required skills
-CREATE TABLE skills (
-  id SERIAL PRIMARY KEY,
-  name TEXT UNIQUE NOT NULL
-);
-
-CREATE TABLE jobs_skills (
-  job_id SERIAL REFERENCES jobs(id) ON DELETE CASCADE,
-  skill_id SERIAL REFERENCES skills(id)
-  PRIMARY KEY (job_id, skill_id)
-);
-
-CREATE TABLE role_skill_stats (
-  role TEXT,
-  skill_id SERIAL,
-  frequency INT,
-  last_updated DATE
-);
+SELECT
+    skill,
+    COUNT(*) AS total_number
+FROM jobs,
+UNNEST(skills) AS skill
+WHERE country = 'usa'
+  AND month = 'june'
+  AND year = '2026'
+GROUP BY skill
+ORDER BY total_number DESC
 
