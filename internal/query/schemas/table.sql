@@ -4,32 +4,45 @@ CREATE TABLE jobs (
   country TEXT,
   month TEXT,
   year TEXT, 
-  id TEXT PRIMARY KEY, 
+  id TEXT, 
   title TEXT NOT NULL, 
   company TEXT,
   job_function TEXT,
   seniority TEXT[],
   role TEXT NOT NULL, 
   locations TEXT[], 
-  skills TEXT[]
+  skills TEXT[],
+  PRIMARY KEY (id, month, year)
 );
 
-# Required skills
-CREATE TABLE skills (
-  id SERIAL PRIMARY KEY,
-  name TEXT UNIQUE NOT NULL
-);
+SELECT
+    skill,
+    COUNT(*) AS total_number
+FROM jobs,
+UNNEST(skills) AS skill
+WHERE country = 'usa'
+  AND month = 'june'
+  AND year = '2026'
+GROUP BY skill
+ORDER BY total_number DESC
 
-CREATE TABLE jobs_skills (
-  job_id SERIAL REFERENCES jobs(id) ON DELETE CASCADE,
-  skill_id SERIAL REFERENCES skills(id)
-  PRIMARY KEY (job_id, skill_id)
-);
+SELECT
+    location,
+    COUNT(*) AS total_number
+FROM jobs,
+UNNEST(locations) AS location
+WHERE country = 'usa'
+  AND month = 'june'
+  AND year = '2026'
+GROUP BY location
+ORDER BY total_number DESC
 
-CREATE TABLE role_skill_stats (
-  role TEXT,
-  skill_id SERIAL,
-  frequency INT,
-  last_updated DATE
-);
+SELECT COUNT(*)
+FROM jobs
+WHERE country='usa'
+AND month='july'
+AND year='2026';
 
+DELETE FROM jobs
+WHERE month = 'july'
+AND year = '2026';

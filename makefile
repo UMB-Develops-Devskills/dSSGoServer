@@ -7,6 +7,6 @@ run:
 routes:
 	go run ./cmd/devskills/main.go -routes
 
-# script
+# script for testing there are total of 10 pages
 script:
-	go run cmd/import/main.go data/usa/jobs-default-usa-june-2026-page1.json
+	go run cmd/import/main.go data/july2026/canada/jobs-default-canada-july-2026-page10.json

@@ -7,46 +7,14 @@ import (
 
 	//"os"
 	//"github.com/go-chi/chi/v5"
-	"github.com/jackc/pgx/v5/pgxpool"
+	//"github.com/jackc/pgx/v5/pgxpool"
 	//"github.com/joho/godotenv"
 )
 
-// Datajoblake response
-type Response struct {
-	Found int `json:"found"`
-	Page int `json:"page"`
-	PerPage int `json:"per_page"`
-	Jobs []Job `json:"jobs"`
-}
-
-// job data general, usa based 
-type Job struct {
-	//Country string `json:"file_country"`
- //Month string `json:"file_month"`
-  //Year string `json:"file_year"`
-	ID string `json:"id"` 
-	Title string `json:"title"`
-	Company string `json:"company"`
-	JobFunction string `json:"job_function"`
-	Role string `json:"role"`
-	Seniority []string `json:"seniority"`
-	Location []string `json:"locations"`
-	Skills []string `json:"skills"`
-}
-
-// This struct holds dependencies for http handlers
-type TaskHandler struct {
-	DB *pgxpool.Pool
-}
-
-func nullIfEmpty(s string) any {
-	if s == "" {
-		return nil
-	}
-	return s
-}
-
-// This function requests jobs from the database 
+// This function requests job postings from the database 
+// run examples: 
+// http://localhost:8080/api/jobs?country=usa&role=Program+Manager&month=june&year=2026
+// http://localhost:8080/api/jobs?country=usa&company=SpaceX
 func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	/*err := godotenv.Load()
 	if err != nil {
@@ -54,15 +22,11 @@ func (h *TaskHandler) GetJobData(w http.ResponseWriter, r *http.Request) {
 	}*/
 	role := r.URL.Query().Get("role")
 	seniority := r.URL.Query().Get("seniority")
-	//title := r.URL.Query().Get("title") // ex. senior, intern...
 	//location := r.URL.Query().Get("locations")
 	company := r.URL.Query().Get("company")
 	country := r.URL.Query().Get("country")
 	month := r.URL.Query().Get("month")
 	year := r.URL.Query().Get("year")
-	// run examples: 
-	// http://localhost:8080/api/jobs?country=usa&role=Program+Manager&month=june&year=2026
-	// http://localhost:8080/api/jobs?country=usa&company=SpaceX
 	query := `SELECT id, title, company, job_function, role, seniority, locations, skills FROM jobs 
 	WHERE ($1::text IS NULL OR country = $1)
   AND ($2::text IS NULL OR company = $2)
