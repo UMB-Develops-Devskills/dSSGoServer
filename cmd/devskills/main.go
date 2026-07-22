@@ -17,19 +17,11 @@ import (
 	//"github.com/joho/godotenv"
 	"github.com/go-chi/docgen"
 	"github.com/UMB-Develops-Devskills/dSSGoServer/internal/handlers"
-	"github.com/UMB-Develops-Devskills/dSSGoServer/internal/cloudsql"
+	"github.com/UMB-Develops-Devskills/dSSGoServer/internal/firebase"
 
 )
 
 var routes = flag.Bool("routes", false, "Generate router documentation")
-
-func paginate(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// just a stub.. some ideas are to look at URL query params for something like
-		// the page number, or the limit, and send a query cursor down the chain
-		next.ServeHTTP(w, r)
-	})
-}
 
 func main() {
 	/*err := godotenv.Load()
@@ -54,6 +46,7 @@ func main() {
 	r.Get("/ping", func(w http.ResponseWriter, r *http.Request) {w.Write([]byte("pong"))})
 	r.Get("/panic", func(w http.ResponseWriter, r *http.Request) {panic("test")})
 
+	// generate a routes.json file
 	if *routes {
 		fmt.Println(docgen.JSONRoutesDoc(r))
 		fmt.Println(docgen.MarkdownRoutesDoc(r, docgen.MarkdownOpts{
@@ -61,31 +54,30 @@ func main() {
 		}))
 		return
 	}
-
+	
+	// Connect to Firebase
 	ctx := context.Background()
-	// Connect to Cloud sql 
-	db, cleanup, err := cloudsql.ConnectDB(ctx)
+	client, err := firebase.ConnectFireBaseStorage(ctx)
 	if err != nil {
-		log.Printf("DB connection failed: %v", err)
+		log.Printf("firebase connection failed: %v", err)
 	}
-	defer cleanup()
-	defer db.Close()
+	defer client.Close()
 
-	handler := &handlers.TaskHandler{DB : db}
+	handler := &handlers.TaskHandler{Storage : client}
 
 	// REST routes /api
 	r.Route("/api", func(r chi.Router) {
 		//r.With(paginate).Get("/", handlers.GetJobData)
-		r.Get("/jobs", handler.GetJobData) // GET /api/jobs
+		//r.Get("/jobs", handler.GetJobData) // GET /api/jobs
+		r.Get("/keys", handler.GetKeyData) // GET /api/keys, call this in frontend to display the filters
 		r.Route("/trends", func(r chi.Router) {
 			r.Get("/skills", handler.GetSkillTrends) // GET /api/trends/skills
-			r.Get("/locations", handler.GetWorkLocationTrend) // GET /api/trends/locations
 		})
 	})
 
 	//r.Mount("/admin", adminRouter())
 
-	// cloudsql runs on default port 8080
+	// devskills instance runs on default port localhost:8080
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"

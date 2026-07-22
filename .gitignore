@@ -1,5 +1,8 @@
 .env
 data
 
+# firebase secrets
+service-account-key.json
+
 #shell script
 pipe.sh

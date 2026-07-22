@@ -1,0 +1,1341 @@
+[
+  {
+    "skill": "Assembly",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Bash",
+    "category": "Developer Tools",
+    "subcategory": "Scripting Languages"
+  },
+  {
+    "skill": "C",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "C#",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "C++",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Clojure",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "COBOL",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "CSS",
+    "category": "Software Development",
+    "subcategory": "Styling"
+  },
+  {
+    "skill": "Dart",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Delphi",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Elixir",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Erlang",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "F#",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Fortran",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Go",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Groovy",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Haskell",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "HTML",
+    "category": "Software Development",
+    "subcategory": "Markup Languages"
+  },
+  {
+    "skill": "Java",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "JavaScript",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Julia",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Kotlin",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Lua",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Objective-C",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "OCaml",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Perl",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "PHP",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Python",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Ruby",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Rust",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Scala",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Solidity",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Swift",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "TypeScript",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Visual Basic",
+    "category": "Software Development",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "XML",
+    "category": "Software Development",
+    "subcategory": "Markup Languages"
+  },
+  {
+    "skill": "YAML",
+    "category": "Developer Tools",
+    "subcategory": "Configuration Languages"
+  },
+
+  {
+    "skill": "AWS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Platforms"
+  },
+  {
+    "skill": "EC2",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "ECS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "EKS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "Lambda",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "S3",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "RDS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "DynamoDB",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "SQS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "SNS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "CloudWatch",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "CloudFormation",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Infrastructure as Code"
+  },
+  {
+    "skill": "Route 53",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "API Gateway",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "API Management"
+  },
+  {
+    "skill": "IAM",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Security"
+  },
+  {
+    "skill": "ElastiCache",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "Elastic Beanstalk",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "AWS Services"
+  },
+  {
+    "skill": "CloudFront",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CDN"
+  },
+  {
+    "skill": "Secrets Manager",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Security"
+  },
+  {
+    "skill": "CodeBuild",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "CodePipeline",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "CodeDeploy",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Google Cloud",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Platforms"
+  },
+  {
+    "skill": "GCP",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Platforms"
+  },
+  {
+    "skill": "Cloud Run",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Cloud Functions",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Cloud Storage",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Cloud SQL",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Firebase",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "BigQuery",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Pub/Sub",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Vertex AI",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "GKE",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Artifact Registry",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Google Cloud Services"
+  },
+  {
+    "skill": "Secret Manager",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Security"
+  },
+  {
+    "skill": "Azure",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Platforms"
+  },
+  {
+    "skill": "Azure Functions",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Microsoft Azure Services"
+  },
+  {
+    "skill": "Azure App Service",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Microsoft Azure Services"
+  },
+  {
+    "skill": "Azure SQL",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "Azure Blob Storage",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Microsoft Azure Services"
+  },
+  {
+    "skill": "Azure DevOps",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "AKS",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Microsoft Azure Services"
+  },
+  {
+    "skill": "Azure Container Registry",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Container Registry"
+  },
+  {
+    "skill": "Azure Monitor",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "Azure Key Vault",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Cloud Security"
+  },
+  {
+    "skill": "Docker",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Containers"
+  },
+  {
+    "skill": "Docker Compose",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Containers"
+  },
+  {
+    "skill": "Podman",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Containers"
+  },
+  {
+    "skill": "Kubernetes",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Container Orchestration"
+  },
+  {
+    "skill": "Helm",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Container Orchestration"
+  },
+  {
+    "skill": "OpenShift",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Container Orchestration"
+  },
+  {
+    "skill": "Rancher",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Container Orchestration"
+  },
+
+  {
+    "skill": "Jenkins",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "GitHub Actions",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "GitLab CI",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "CircleCI",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Travis CI",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Azure DevOps Pipelines",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Argo CD",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Tekton",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CI/CD"
+  },
+  {
+    "skill": "Terraform",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Infrastructure as Code"
+  },
+  {
+    "skill": "Pulumi",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Infrastructure as Code"
+  },
+  {
+    "skill": "Ansible",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Configuration Management"
+  },
+  {
+    "skill": "Chef",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Configuration Management"
+  },
+  {
+    "skill": "Puppet",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Configuration Management"
+  },
+  {
+    "skill": "SaltStack",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Configuration Management"
+  },
+  {
+    "skill": "Prometheus",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "Grafana",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "Datadog",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "New Relic",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Monitoring"
+  },
+  {
+    "skill": "Splunk",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Logging"
+  },
+  {
+    "skill": "ELK Stack",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Logging"
+  },
+  {
+    "skill": "Elastic Stack",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Logging"
+  },
+  {
+    "skill": "Logstash",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Logging"
+  },
+  {
+    "skill": "Kibana",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Logging"
+  },
+  {
+    "skill": "NGINX",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Web Servers"
+  },
+  {
+    "skill": "Apache",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Web Servers"
+  },
+  {
+    "skill": "HAProxy",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Load Balancing"
+  },
+  {
+    "skill": "Traefik",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Load Balancing"
+  },
+  {
+    "skill": "VMware",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Virtualization"
+  },
+  {
+    "skill": "VirtualBox",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Virtualization"
+  },
+  {
+    "skill": "Vagrant",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Virtualization"
+  },
+  {
+    "skill": "Netlify",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Hosting Platforms"
+  },
+  {
+    "skill": "Vercel",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Hosting Platforms"
+  },
+  {
+    "skill": "Heroku",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Hosting Platforms"
+  },
+  {
+    "skill": "DigitalOcean",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "Hosting Platforms"
+  },
+  {
+    "skill": "Cloudflare",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CDN & Edge"
+  },
+  {
+    "skill": "Cloudflare Workers",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CDN & Edge"
+  },
+  {
+    "skill": "Fastly",
+    "category": "Cloud & Infrastructure",
+    "subcategory": "CDN & Edge"
+  },
+  {
+    "skill": "PostgreSQL",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "MySQL",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "SQL Server",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "Oracle Database",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "SQLite",
+    "category": "Data & Storage",
+    "subcategory": "Relational Databases"
+  },
+  {
+    "skill": "MongoDB",
+    "category": "Data & Storage",
+    "subcategory": "NoSQL Databases"
+  },
+  {
+    "skill": "DynamoDB",
+    "category": "Data & Storage",
+    "subcategory": "NoSQL Databases"
+  },
+  {
+    "skill": "Cassandra",
+    "category": "Data & Storage",
+    "subcategory": "NoSQL Databases"
+  },
+  {
+    "skill": "Redis",
+    "category": "Data & Storage",
+    "subcategory": "Caching"
+  },
+  {
+    "skill": "Elasticsearch",
+    "category": "Data & Storage",
+    "subcategory": "Search Databases"
+  },
+  {
+    "skill": "BigQuery",
+    "category": "Data & Storage",
+    "subcategory": "Data Warehousing"
+  },
+  {
+    "skill": "Snowflake",
+    "category": "Data & Storage",
+    "subcategory": "Data Warehousing"
+  },
+
+  {
+    "skill": "Apache Kafka",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Apache Airflow",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Apache Spark",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Hadoop",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "ETL",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Data Pipelines",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Data Warehousing",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "Databricks",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "dbt",
+    "category": "Data & Analytics",
+    "subcategory": "Data Engineering"
+  },
+  {
+    "skill": "MATLAB",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science Tools"
+  },
+  {
+    "skill": "R",
+    "category": "Data & Analytics",
+    "subcategory": "Programming Languages"
+  },
+  {
+    "skill": "Statistics",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science"
+  },
+  {
+    "skill": "Data Analysis",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science"
+  },
+  {
+    "skill": "Data Visualization",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science"
+  },
+  {
+    "skill": "Tableau",
+    "category": "Data & Analytics",
+    "subcategory": "Business Intelligence"
+  },
+  {
+    "skill": "Power BI",
+    "category": "Data & Analytics",
+    "subcategory": "Business Intelligence"
+  },
+  {
+    "skill": "Jupyter",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science Tools"
+  },
+  {
+    "skill": "NumPy",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science Libraries"
+  },
+  {
+    "skill": "Pandas",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science Libraries"
+  },
+  {
+    "skill": "SciPy",
+    "category": "Data & Analytics",
+    "subcategory": "Data Science Libraries"
+  },
+  {
+    "skill": "Matplotlib",
+    "category": "Data & Analytics",
+    "subcategory": "Data Visualization"
+  },
+  {
+    "skill": "Seaborn",
+    "category": "Data & Analytics",
+    "subcategory": "Data Visualization"
+  },
+  {
+    "skill": "Plotly",
+    "category": "Data & Analytics",
+    "subcategory": "Data Visualization"
+  },
+  {
+    "skill": "Artificial Intelligence",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Concepts"
+  },
+  {
+    "skill": "AI",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Concepts"
+  },
+  {
+    "skill": "Machine Learning",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning"
+  },
+  {
+    "skill": "Deep Learning",
+    "category": "Artificial Intelligence",
+    "subcategory": "Deep Learning"
+  },
+  {
+    "skill": "Generative AI",
+    "category": "Artificial Intelligence",
+    "subcategory": "Generative AI"
+  },
+  {
+    "skill": "LLM",
+    "category": "Artificial Intelligence",
+    "subcategory": "Large Language Models"
+  },
+  {
+    "skill": "Large Language Models",
+    "category": "Artificial Intelligence",
+    "subcategory": "Large Language Models"
+  },
+  {
+    "skill": "Prompt Engineering",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Development"
+  },
+  {
+    "skill": "RAG",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Development"
+  },
+  {
+    "skill": "Fine-tuning",
+    "category": "Artificial Intelligence",
+    "subcategory": "Model Training"
+  },
+  {
+    "skill": "TensorFlow",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "PyTorch",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "Keras",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "Scikit-learn",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "XGBoost",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "LightGBM",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "CatBoost",
+    "category": "Artificial Intelligence",
+    "subcategory": "Machine Learning Frameworks"
+  },
+  {
+    "skill": "OpenAI",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "Anthropic",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "Google Gemini",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "Azure OpenAI",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "Cohere",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+  {
+    "skill": "Mistral AI",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Platforms"
+  },
+
+  {
+    "skill": "LangChain",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "LangGraph",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "LlamaIndex",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "Semantic Kernel",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "Haystack",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "DSPy",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Frameworks"
+  },
+  {
+    "skill": "Hugging Face",
+    "category": "Artificial Intelligence",
+    "subcategory": "Model Platforms"
+  },
+  {
+    "skill": "Ollama",
+    "category": "Artificial Intelligence",
+    "subcategory": "Model Platforms"
+  },
+  {
+    "skill": "MLflow",
+    "category": "Artificial Intelligence",
+    "subcategory": "MLOps"
+  },
+  {
+    "skill": "Kubeflow",
+    "category": "Artificial Intelligence",
+    "subcategory": "MLOps"
+  },
+  {
+    "skill": "Weights & Biases",
+    "category": "Artificial Intelligence",
+    "subcategory": "MLOps"
+  },
+  {
+    "skill": "SageMaker",
+    "category": "Artificial Intelligence",
+    "subcategory": "MLOps"
+  },
+  {
+    "skill": "Pinecone",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "ChromaDB",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "Weaviate",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "Milvus",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "Qdrant",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "FAISS",
+    "category": "Artificial Intelligence",
+    "subcategory": "Vector Databases"
+  },
+  {
+    "skill": "Computer Vision",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Applications"
+  },
+  {
+    "skill": "OpenCV",
+    "category": "Artificial Intelligence",
+    "subcategory": "Computer Vision"
+  },
+  {
+    "skill": "YOLO",
+    "category": "Artificial Intelligence",
+    "subcategory": "Computer Vision"
+  },
+  {
+    "skill": "Natural Language Processing",
+    "category": "Artificial Intelligence",
+    "subcategory": "AI Applications"
+  },
+  {
+    "skill": "spaCy",
+    "category": "Artificial Intelligence",
+    "subcategory": "Natural Language Processing"
+  },
+  {
+    "skill": "NLTK",
+    "category": "Artificial Intelligence",
+    "subcategory": "Natural Language Processing"
+  },
+  {
+    "skill": "Transformers",
+    "category": "Artificial Intelligence",
+    "subcategory": "Natural Language Processing"
+  },
+  {
+    "skill": "Android",
+    "category": "Software Development",
+    "subcategory": "Mobile Development"
+  },
+  {
+    "skill": "iOS",
+    "category": "Software Development",
+    "subcategory": "Mobile Development"
+  },
+  {
+    "skill": "React Native",
+    "category": "Software Development",
+    "subcategory": "Mobile Development"
+  },
+  {
+    "skill": "Flutter",
+    "category": "Software Development",
+    "subcategory": "Mobile Development"
+  },
+  {
+    "skill": "SwiftUI",
+    "category": "Software Development",
+    "subcategory": "Mobile Development"
+  },
+  {
+    "skill": "Android Studio",
+    "category": "Developer Tools",
+    "subcategory": "Mobile Development Tools"
+  },
+  {
+    "skill": "Xcode",
+    "category": "Developer Tools",
+    "subcategory": "Mobile Development Tools"
+  },
+  {
+    "skill": "Cybersecurity",
+    "category": "Cybersecurity",
+    "subcategory": "Security Concepts"
+  },
+  {
+    "skill": "OAuth",
+    "category": "Cybersecurity",
+    "subcategory": "Authentication"
+  },
+  {
+    "skill": "JWT",
+    "category": "Cybersecurity",
+    "subcategory": "Authentication"
+  },
+  {
+    "skill": "Encryption",
+    "category": "Cybersecurity",
+    "subcategory": "Security Concepts"
+  },
+  {
+    "skill": "OWASP",
+    "category": "Cybersecurity",
+    "subcategory": "Application Security"
+  },
+  {
+    "skill": "Network Security",
+    "category": "Cybersecurity",
+    "subcategory": "Network Security"
+  },
+  {
+    "skill": "Git",
+    "category": "Developer Tools",
+    "subcategory": "Version Control"
+  },
+  {
+    "skill": "GitHub",
+    "category": "Developer Tools",
+    "subcategory": "Version Control"
+  },
+  {
+    "skill": "GitLab",
+    "category": "Developer Tools",
+    "subcategory": "Version Control"
+  },
+  {
+    "skill": "Bitbucket",
+    "category": "Developer Tools",
+    "subcategory": "Version Control"
+  },
+  {
+    "skill": "VS Code",
+    "category": "Developer Tools",
+    "subcategory": "IDEs"
+  },
+  {
+    "skill": "IntelliJ IDEA",
+    "category": "Developer Tools",
+    "subcategory": "IDEs"
+  },
+  {
+    "skill": "Postman",
+    "category": "Developer Tools",
+    "subcategory": "API Development"
+  },
+  {
+    "skill": "npm",
+    "category": "Developer Tools",
+    "subcategory": "Package Managers"
+  },
+  {
+    "skill": "Yarn",
+    "category": "Developer Tools",
+    "subcategory": "Package Managers"
+  },
+  {
+    "skill": "pnpm",
+    "category": "Developer Tools",
+    "subcategory": "Package Managers"
+  },
+  {
+    "skill": "Make",
+    "category": "Developer Tools",
+    "subcategory": "Build Tools"
+  },
+  {
+    "skill": "Maven",
+    "category": "Developer Tools",
+    "subcategory": "Build Tools"
+  },
+  {
+    "skill": "Gradle",
+    "category": "Developer Tools",
+    "subcategory": "Build Tools"
+  },
+  {
+    "skill": "Figma",
+    "category": "Developer Tools",
+    "subcategory": "Design Tools"
+  },
+
+  { 
+    "skill": "React", 
+    "category": "Frontend", 
+    "subcategory": "Frontend Frameworks" },
+  { 
+    "skill": 
+    "React Native", 
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "Next.js", 
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "Vue", 
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "Vue.js", 
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "Nuxt",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "Angular",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  { "skill": "AngularJS",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks" 
+  },
+  {
+    "skill": "Svelte",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "SvelteKit",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "SolidJS",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Qwik",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Astro",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Remix",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Ember.js",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Backbone.js",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "jQuery",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Lit",
+    "category": "Frontend",
+    "subcategory": "Web Components"
+  },
+  {
+    "skill": "Stencil",
+    "category": "Frontend",
+    "subcategory": "Web Components"
+  },
+  {
+    "skill": "Alpine.js",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "HTMX",
+    "category": "Frontend",
+    "subcategory": "Frontend Frameworks"
+  },
+  {
+    "skill": "Tailwind CSS",
+    "category": "Frontend",
+    "subcategory": "CSS Frameworks"
+  },
+  {
+    "skill": "Bootstrap",
+    "category": "Frontend",
+    "subcategory": "CSS Frameworks"
+  },
+  {
+    "skill": "Material UI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Ant Design",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Chakra UI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Radix UI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Shadcn UI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "DaisyUI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Vuetify",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "PrimeReact",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  },
+  {
+    "skill": "Semantic UI",
+    "category": "Frontend",
+    "subcategory": "UI Libraries"
+  }
+]
