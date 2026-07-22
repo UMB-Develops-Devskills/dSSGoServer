@@ -1,65 +1,122 @@
 package handlers
 
 import (
+	"context"
 	"encoding/json"
-	"log"
+	"fmt"
 	"net/http"
+
+	"cloud.google.com/go/storage"
 	//"github.com/jackc/pgx/v5/pgxpool"
 )
 
-// This function requests skill counts from specific role, seniority (entry+mid+intern), country, company, time period (month + year)
+// this function downloads the job postings from firebase as a jobfile and stores them into []job
+func DownloadJobs(ctx context.Context, client *storage.Client, bucketName string, filepath string) ([]Job, error) {
+	bkt := client.Bucket(bucketName) 
+	object := bkt.Object(filepath)
+
+	reader, err := object.NewReader(ctx) 
+	if err != nil {
+		return nil, err
+	}
+	defer reader.Close()
+	var jf JobFile
+	err = json.NewDecoder(reader).Decode(&jf)
+	if err != nil {
+		return nil, err
+	}
+	return jf.Jobs, nil
+}
+
+// this function downloads the skills reference from firebase /metadata folder and stores them as a []SkillRefData
+func DownloadSkillRef(ctx context.Context, client *storage.Client, bucketName string, filepath string) (SkillCategories, error) {
+	bkt := client.Bucket(bucketName)
+	object := bkt.Object(filepath)
+	
+	reader, err := object.NewReader(ctx) 
+	if err != nil {
+		return nil, err
+	}
+	defer reader.Close()
+	var sc SkillCategories
+	err = json.NewDecoder(reader).Decode(&sc)
+	if err != nil {
+		return nil, err
+	}
+	return sc, nil
+}
+
+// this function loops through each item in skillsrefdata to match with the target 'skill' string. 
+func FindSkill(sc SkillCategories, skill string) *SkillRefData {
+	for _, item := range sc {
+		if item.Skill == skill {
+			return &item
+		}
+	}
+	return nil
+}
+
+// this function analyzes the []jobs and the skillsref.json file and returns a skilltrendresponse struct to display skills, specific skill counts and total count of skills. 
+func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat string) (SkillTrendResponse) {
+	counts := make(map[string] int)
+	md := make(map[string]SkillRefData) // metadata map of skills referenced
+	var trends []SkillTrend
+	for _, ref := range sc {
+		md[ref.Skill] = ref
+	}
+	totalCount := 0
+	for _, job := range jobs {
+		for _, skill := range job.Skills {
+			ref, ok := md[skill]
+			if !ok {
+				continue
+			}
+			if category != "" && ref.Category != category {
+				continue
+			}
+			if subcat != "" && ref.Subcategory != subcat {
+				continue
+			}
+			counts[skill]++
+			totalCount++
+		}
+	}
+	for skill, count := range counts {
+		ref := md[skill]
+		trends = append(trends, SkillTrend{
+			Category: ref.Category,
+			Subcategory: ref.Subcategory,
+			Skill: skill, 
+			Count: count,
+		})
+	}
+	return SkillTrendResponse {
+		TotalCount: totalCount, 
+		Trends: trends, 
+	}
+}
+
+// This function requests skill counts from specific role, seniority (entry+mid+intern), country, time period (month + year)
 // skills will be organized via skill_categories to show frontend and backend categories and subcategories (languages, frameworks, mobile, db, cloud, devops, data engineering, ai/machine learning, version control, testing)
-// query example:
-// /api/trends/skills?country=usa&month=june&year=2026
-// /api/trends/skills?role=Software+Engineer&country=usa&month=june&year=2026
+// example query: /api/trends/skills?country=usa&year=2026&month=july&role=frontend-engineer&seniority=mid
 func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	role := r.URL.Query().Get("role")
 	country := r.URL.Query().Get("country")
 	seniority := r.URL.Query().Get("seniority")
-	company := r.URL.Query().Get("company") // ex. all US. companies
 	month := r.URL.Query().Get("month")
 	year := r.URL.Query().Get("year")
 	category := r.URL.Query().Get("category")
-	limit := r.URL.Query().Get("limit")
+	subcategory := r.URL.Query().Get("subcategory")
 
-	query := `SELECT sc.category, sc.subcategory, u.skill, COUNT(*)
-	FROM jobs j
-	CROSS JOIN UNNEST(j.skills) AS u(skill)
-	JOIN skill_categories sc ON sc.skill = u.skill
-	WHERE ($1::text IS NULL OR role = $1)
-	AND ($2::text IS NULL OR country = $2)
-	AND ($3::text IS NULL OR $3 = ANY(j.seniority))
-	AND ($4::text IS NULL OR company = $4)
-	AND ($5::text IS NULL OR month = $5)
-	AND ($6::text IS NULL OR year = $6)
-	AND ($7::text IS NULL OR LOWER(sc.category) = LOWER($7))
-	GROUP BY sc.category, sc.subcategory, u.skill
-	ORDER BY COUNT(*) DESC
-	LIMIT $8;`
-
-	rows, err := h.DB.Query(r.Context(), query, nullIfEmpty(role), nullIfEmpty(country), nullIfEmpty(seniority), nullIfEmpty(company), nullIfEmpty(month), nullIfEmpty(year), nullIfEmpty(category), nullIfEmpty(limit))
+	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", country, year, month, role, seniority)
+	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
+	sc, err := DownloadSkillRef(r.Context(), h.Storage, bucketName, "metadata/skillRef.json")
 	if err != nil {
-		log.Printf("Skill trends query error: %v", err)
-		http.Error(w, "failed to query skills trends", http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	defer rows.Close()
-	// skill trends array
-	var skills []SkillTrend
-	for rows.Next() {
-		var s SkillTrend
-		if err := rows.Scan(&s.Category, &s.Subcategory, &s.Skill, &s.Count); err != nil {
-			log.Printf("scan error: %v", err)
-			http.Error(w, "failed to scan skills", http.StatusInternalServerError)
-			return
-		}
-		skills = append(skills, s)
-	}
-	// if no skills exist return an empty array
-	if skills == nil {
-		skills = []SkillTrend{}
-	}
+	trends := AnalayzeSkills(jobs, sc, category, subcategory)
 	// write to json
 	w.Header().Set("Content-type", "application/json")
-	json.NewEncoder(w).Encode(skills)
+	json.NewEncoder(w).Encode(trends)
 }
