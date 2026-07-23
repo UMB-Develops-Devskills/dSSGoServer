@@ -10,24 +10,6 @@ import (
 	//"github.com/jackc/pgx/v5/pgxpool"
 )
 
-// this function downloads the job postings from firebase as a jobfile and stores them into []job
-func DownloadJobs(ctx context.Context, client *storage.Client, bucketName string, filepath string) ([]Job, error) {
-	bkt := client.Bucket(bucketName) 
-	object := bkt.Object(filepath)
-
-	reader, err := object.NewReader(ctx) 
-	if err != nil {
-		return nil, err
-	}
-	defer reader.Close()
-	var jf JobFile
-	err = json.NewDecoder(reader).Decode(&jf)
-	if err != nil {
-		return nil, err
-	}
-	return jf.Jobs, nil
-}
-
 // this function downloads the skills reference from firebase /metadata folder and stores them as a []SkillRefData
 func DownloadSkillRef(ctx context.Context, client *storage.Client, bucketName string, filepath string) (SkillCategories, error) {
 	bkt := client.Bucket(bucketName)
@@ -57,7 +39,7 @@ func FindSkill(sc SkillCategories, skill string) *SkillRefData {
 }
 
 // this function analyzes the []jobs and the skillsref.json file and returns a skilltrendresponse struct to display skills, specific skill counts and total count of skills. 
-func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat string) (SkillTrendResponse) {
+func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category string, subcat string) (SkillTrendResponse) {
 	counts := make(map[string] int)
 	md := make(map[string]SkillRefData) // metadata map of skills referenced
 	var trends []SkillTrend
@@ -71,6 +53,9 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat stri
 			if !ok {
 				continue
 			}
+			if skill != "" && ref.Skill != skill {
+				continue
+			}
 			if category != "" && ref.Category != category {
 				continue
 			}
@@ -81,8 +66,10 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat stri
 			totalCount++
 		}
 	}
+	var totalSkills []string
 	for skill, count := range counts {
 		ref := md[skill]
+		totalSkills = append(totalSkills, skill)
 		trends = append(trends, SkillTrend{
 			Category: ref.Category,
 			Subcategory: ref.Subcategory,
@@ -92,30 +79,36 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat stri
 	}
 	return SkillTrendResponse {
 		TotalCount: totalCount, 
+		TotalSkills: totalSkills,
 		Trends: trends, 
 	}
 }
 
-// This function requests skill counts from specific role, seniority (entry+mid+intern), country, time period (month + year)
+// This function displays skill counts from specific role, seniority (entry+mid+intern), country, time period (month + year)
 // skills will be organized via skill_categories to show frontend and backend categories and subcategories (languages, frameworks, mobile, db, cloud, devops, data engineering, ai/machine learning, version control, testing)
 // example query: /api/trends/skills?country=usa&year=2026&month=july&role=frontend-engineer&seniority=mid
 func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	role := r.URL.Query().Get("role")
-	country := r.URL.Query().Get("country")
+	location := r.URL.Query().Get("location")
 	seniority := r.URL.Query().Get("seniority")
 	month := r.URL.Query().Get("month")
 	year := r.URL.Query().Get("year")
+	skill := r.URL.Query().Get("skill")
 	category := r.URL.Query().Get("category")
 	subcategory := r.URL.Query().Get("subcategory")
 
-	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", country, year, month, role, seniority)
+	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", location, year, month, role, seniority)
 	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	sc, err := DownloadSkillRef(r.Context(), h.Storage, bucketName, "metadata/skillRef.json")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	trends := AnalayzeSkills(jobs, sc, category, subcategory)
+	trends := AnalayzeSkills(jobs, sc, skill, category, subcategory)
 	// write to json
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(trends)

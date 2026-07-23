@@ -1337,5 +1337,198 @@
     "skill": "Semantic UI",
     "category": "Frontend",
     "subcategory": "UI Libraries"
+  },
+
+  {
+    "skill": "Backend",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Spring Boot",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Microservices",
+    "category": "Software Development"
+  },
+  {
+    "skill": "NoSQL",
+    "category": "Data & Storage"
+  },
+  {
+    "skill": "ERP",
+    "category": "Enterprise Software"
+  },
+  {
+    "skill": ".NET",
+    "category": "Software Development"
+  },
+  {
+    "skill": "BGP",
+    "category": "Networking"
+  },
+  {
+    "skill": "Excel",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "Microsoft Teams",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "Django",
+    "category": "Software Development"
+  },
+  {
+    "skill": "SAML",
+    "category": "Cybersecurity"
+  },
+  {
+    "skill": "Security",
+    "category": "Cybersecurity"
+  },
+  {
+    "skill": "API",
+    "category": "Software Development"
+  },
+  {
+    "skill": "gRPC",
+    "category": "Software Development"
+  },
+  {
+    "skill": "SOAP",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Infrastructure",
+    "category": "Cloud & Infrastructure"
+  },
+  {
+    "skill": "Frontend",
+    "category": "Frontend"
+  },
+  {
+    "skill": "Mobile",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Linux",
+    "category": "Operating Systems"
+  },
+  {
+    "skill": "Windows",
+    "category": "Operating Systems"
+  },
+  {
+    "skill": "Shell",
+    "category": "Operating Systems"
+  },
+  {
+    "skill": "ITIL",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "Node.js",
+    "category": "Software Development"
+  },
+  {
+    "skill": "JIRA",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "Networking",
+    "category": "Networking"
+  },
+  {
+    "skill": "Oracle",
+    "category": "Data & Storage"
+  },
+  {
+    "skill": "VBA",
+    "category": "Software Development"
+  },
+  {
+    "skill": "T-SQL",
+    "category": "Data & Storage"
+  },
+  {
+    "skill": "Slack",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "REST",
+    "category": "Software Development"
+  },
+  {
+    "skill": "SQL",
+    "category": "Data & Storage"
+  },
+  {
+    "skill": "Kafka",
+    "category": "Data & Analytics"
+  },
+  {
+    "skill": "GraphQL",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Spark",
+    "category": "Data & Analytics"
+  },
+  {
+    "skill": "Flask",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Salesforce",
+    "category": "Enterprise Software"
+  },
+  {
+    "skill": "CI/CD",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "DevOps",
+    "category": "Cloud & Infrastructure"
+  },
+  {
+    "skill": "Ethernet",
+    "category": "Networking"
+  },
+  {
+    "skill": "Cloud Computing",
+    "category": "Cloud & Infrastructure"
+  },
+  {
+    "skill": "Spring",
+    "category": "Software Development"
+  },
+  {
+    "skill": "FastAPI",
+    "category": "Software Development"
+  },
+  {
+    "skill": "Data",
+    "category": "Data & Analytics"
+  },
+  {
+    "skill": "FullStack",
+    "category": "Software Development"
+  },
+  {
+    "skill": "LDAP",
+    "category": "Cybersecurity"
+  },
+  {
+    "skill": "AJAX",
+    "category": "Frontend"
+  },
+  {
+    "skill": "Agile",
+    "category": "Developer Tools"
+  },
+  {
+    "skill": "OSPF",
+    "category": "Networking"
   }
 ]
