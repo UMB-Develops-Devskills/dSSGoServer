@@ -89,7 +89,7 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category strin
 // example query: /api/trends/skills?country=usa&year=2026&month=july&role=frontend-engineer&seniority=mid
 func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	role := r.URL.Query().Get("role")
-	country := r.URL.Query().Get("country")
+	location := r.URL.Query().Get("location")
 	seniority := r.URL.Query().Get("seniority")
 	month := r.URL.Query().Get("month")
 	year := r.URL.Query().Get("year")
@@ -97,8 +97,12 @@ func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	category := r.URL.Query().Get("category")
 	subcategory := r.URL.Query().Get("subcategory")
 
-	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", country, year, month, role, seniority)
+	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", location, year, month, role, seniority)
 	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	sc, err := DownloadSkillRef(r.Context(), h.Storage, bucketName, "metadata/skillRef.json")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
