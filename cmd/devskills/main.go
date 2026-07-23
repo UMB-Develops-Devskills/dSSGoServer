@@ -72,6 +72,7 @@ func main() {
 		r.Get("/keys", handler.GetKeyData) // GET /api/keys, call this in frontend to display the filters
 		r.Route("/trends", func(r chi.Router) {
 			r.Get("/skills", handler.GetSkillTrends) // GET /api/trends/skills
+			r.Get("/graph", handler.GetSkillGraph) // GET /api/trends/graph
 		})
 	})
 

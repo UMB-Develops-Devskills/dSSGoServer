@@ -51,7 +51,7 @@ type SkillRefData struct {
 
 type SkillCategories []SkillRefData
 
-// describes the skill trends
+// describes the skills 
 type SkillTrend struct {
 	Category string `json:"category"`
 	Subcategory string `json:"subcategory"`
@@ -69,4 +69,29 @@ type SkillTrendResponse struct {
 // This struct holds dependencies for http handlers
 type TaskHandler struct {
 	Storage *storage.Client
+}
+
+// co-occurrence endpoint response
+type NetworkGraphData struct {
+	Nodes []Node `json:"nodes"`
+	Links []Link `json:"links"`
+}
+
+// describes individual skill nodes in the graph 
+type Node struct {
+	SkillID string `json:"skill_id"`
+	Count int `json:"count"` // basically the node size
+	Category string `json:"category"`
+}
+
+type SkillPair struct {
+	Skill1 string 
+	Skill2 string
+}
+
+// describes the link between two skill nodes
+type Link struct {
+	SkillSource string `json:"skill_source"`
+	SkillTarget string `json:"skill_target"`
+	Count int `json:"cooccurrence_count"` // edges
 }
