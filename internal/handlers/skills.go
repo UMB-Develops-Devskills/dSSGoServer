@@ -81,8 +81,10 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat stri
 			totalCount++
 		}
 	}
+	var totalSkills []string
 	for skill, count := range counts {
 		ref := md[skill]
+		totalSkills = append(totalSkills, skill)
 		trends = append(trends, SkillTrend{
 			Category: ref.Category,
 			Subcategory: ref.Subcategory,
@@ -92,6 +94,7 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, category string, subcat stri
 	}
 	return SkillTrendResponse {
 		TotalCount: totalCount, 
+		TotalSkills: totalSkills,
 		Trends: trends, 
 	}
 }

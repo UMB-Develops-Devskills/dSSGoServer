@@ -62,13 +62,8 @@ type SkillTrend struct {
 // describes the outer skill trends response
 type SkillTrendResponse struct {
 	TotalCount int `json:"total_count_skills"`
+	TotalSkills []string `json:"total_mentioned_skills"`
 	Trends []SkillTrend `json:"trends"`
-}
-
-// job location trends struct
-type LocationTrend struct {
-	Location string `json:"Location"`
-	Count int `json:"count"`
 }
 
 // This struct holds dependencies for http handlers
