@@ -92,3 +92,9 @@ type Link struct {
 	SkillTarget string `json:"skill_target"`
 	Count int `json:"cooccurrence_count"` // edges
 }
+
+type HistoryGraphData struct {
+	Year string `json:"year"`
+	Month string `json:"month"`
+	Trends []SkillTrend `json:"trends"`
+}

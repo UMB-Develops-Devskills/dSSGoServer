@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"strings"
+	"log"
 	"cloud.google.com/go/storage"
-	"google.golang.org/api/iterator"
 	//"os"
 	//"github.com/go-chi/chi/v5"
 	//"github.com/jackc/pgx/v5/pgxpool"
@@ -15,28 +15,15 @@ import (
 
 // this function supports /api/keys handler by listing objects in the bucket
 func GetBucketData(ctx context.Context, client *storage.Client, bucketName string) ([]BucketData, error) {
-	bkt := client.Bucket(bucketName) 
-	query := &storage.Query{Prefix: "jobs/"}
-	it := bkt.Objects(ctx, query)
+	prefix := "jobs/"
+	files, err := GetJobFiles(ctx, client, bucketName, prefix)
+	if err != nil {
+		log.Println(err)
+	}
 	// this array holds the objects
 	var objects []BucketData
-	for {
-		attrs, err := it.Next()
-		if err == iterator.Done {
-			break
-		}
-		if err != nil {
-			return nil, err
-		}
-		// folders
-		if strings.HasSuffix(attrs.Name, "/") {
-			continue 
-		}
-		// files 
-		if !strings.HasSuffix(attrs.Name, "-jobs.json") {
-			continue
-		}
-		parts := strings.Split(attrs.Name, "/")
+	for _, file := range files {
+		parts := strings.Split(file, "/")
 		// ex: "jobs/california/year2026/july/machine-learning-engineer/senior-jobs.json" -> 6 parts
 		if len(parts) != 6 {
 			continue

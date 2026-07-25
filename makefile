@@ -7,6 +7,7 @@ run:
 routes:
 	go run ./cmd/devskills/main.go -routes
 
-# script for testing there are total of 10 pages
+# script for generating monthly data for history graph
+# gcloud storage cp <storage_location> .
 script:
-	go run cmd/import/main.go data/july2026/canada/jobs-default-canada-july-2026-page10.json
+	go run ./scripts/generateMonth.go
