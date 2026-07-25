@@ -59,7 +59,7 @@ func GetBucketData(ctx context.Context, client *storage.Client, bucketName strin
 func (h *TaskHandler) GetKeyData(w http.ResponseWriter, r *http.Request) {
 	objects, err := GetBucketData(r.Context(), h.Storage, bucketName)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "500 error, could not find key filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
 	// write to json

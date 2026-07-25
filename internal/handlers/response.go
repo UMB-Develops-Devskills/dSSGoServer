@@ -4,9 +4,6 @@ import (
 	"cloud.google.com/go/storage"
 )
 
-const bucketName = "devskills-499815.firebasestorage.app"
-
-
 // outlines the folder structure data of the files in firebase bucket
 type BucketData struct {
 	Location string `json:"location"`

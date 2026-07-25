@@ -6,6 +6,8 @@ import (
 	"cloud.google.com/go/storage"
 )
 
+const bucketName = "devskills-499815.firebasestorage.app"
+
 // this function downloads the job postings from firebase as a jobfile and stores them into []job
 func DownloadJobs(ctx context.Context, client *storage.Client, bucketName string, filepath string) ([]Job, error) {
 	bkt := client.Bucket(bucketName) 

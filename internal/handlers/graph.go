@@ -86,12 +86,12 @@ func (h *TaskHandler) GetSkillGraph(w http.ResponseWriter, r *http.Request) {
 	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", location, year, month, role, seniority)
 	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "500 error, could not find jobs filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
 	sc, err := DownloadSkillRef(r.Context(), h.Storage, bucketName, "metadata/skillRef.json")
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "500 error, could not find skillref filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
 	networkGraph := AnalyzeSkillPair(jobs, sc)
