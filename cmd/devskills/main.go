@@ -73,7 +73,7 @@ func main() {
 		r.Route("/trends", func(r chi.Router) {
 			r.Get("/skills", handler.GetSkillTrends) // GET /api/trends/skills
 			r.Get("/graph", handler.GetSkillGraph) // GET /api/trends/graph
-			//r.Get("/history", handler.GetHistoryData) // GET /api/trends/graph
+			r.Get("/history", handler.GetHistoryData) // GET /api/trends/graph
 		})
 	})
 

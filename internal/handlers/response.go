@@ -58,6 +58,7 @@ type SkillTrend struct {
 
 // describes the outer skill trends response
 type SkillTrendResponse struct {
+	Skill string `json:"skill"`
 	TotalCount int `json:"total_count_skills"`
 	TotalSkills []string `json:"total_mentioned_skills"`
 	Trends []SkillTrend `json:"trends"`
@@ -69,7 +70,9 @@ type TaskHandler struct {
 }
 
 // co-occurrence endpoint response
-type NetworkGraphData struct {
+type NetworkGraphDataResponse struct {
+	Skill string `json:"skill"`
+	TotalSkills []string `json:"total_mentioned_skills"`
 	Nodes []Node `json:"nodes"`
 	Links []Link `json:"links"`
 }
@@ -93,8 +96,36 @@ type Link struct {
 	Count int `json:"cooccurrence_count"` // edges
 }
 
-type HistoryGraphData struct {
+// describes the history file data
+type HistoryFile struct {
+	Location string `json:"location"`
 	Year string `json:"year"`
 	Month string `json:"month"`
-	Trends []SkillTrend `json:"trends"`
+	TotalJobs int `json:"total_jobs"`
+	HistorySkillCounts []HistorySkillCounts `json:"skills"`
+}
+
+// describes the skills[] inside the history file data
+type HistorySkillCounts struct {
+	Skill string `json:"skill"`
+	Count int `json:"count"`
+}
+
+// history data of skills
+type History struct {
+	Skill string `json:"skill"`
+	Month string `json:"month"`
+	Year string `json:"year"`
+	Count int `json:"count"`
+}
+
+// history endpoint response
+type HistoryGraphResponse struct {
+	Skill string `json:"skill"`
+	TotalSkills []string `json:"total_mentioned_skills"`
+	TotalJobs int `json:"total_jobs"`
+	Location string `json:"location"`
+	Month string `json:"month"`
+	Year string `json:"year"`
+	History []History `json:"history"`
 }

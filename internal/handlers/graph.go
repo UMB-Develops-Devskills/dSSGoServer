@@ -9,9 +9,10 @@ import (
 
 // this function analyzes each job posting for skills, counts each skill and pairs two skills.  
 // Given one skill is present, how many times does another skill co-occur in the same job description
-func AnalyzeSkillPair(jobs []Job, sc SkillCategories) NetworkGraphData {
+func AnalyzeSkillPair(jobs []Job, sc SkillCategories, skill string) NetworkGraphDataResponse {
 	skillCount := make(map[string]int)
 	pairCount := make(map[SkillPair]int)
+	totalSkills := []string{}
 	md := make(map[string]SkillRefData) // metadata list of skills referenced
 	for _, ref := range sc {
 		md[ref.Skill] = ref
@@ -19,17 +20,20 @@ func AnalyzeSkillPair(jobs []Job, sc SkillCategories) NetworkGraphData {
 	// for each unique skill found increment the skillcount by 1
 	for _, job := range jobs {
 		unique := make(map[string]bool) 
-		for _, skill := range job.Skills {
+		for _, jobSkill := range job.Skills {
 			// if there is a duplicated skill, set to true
-			if unique[skill] {
+			if unique[jobSkill] {
 				continue
 			}
-			unique[skill] = true 
-			skillCount[skill]++
+			unique[jobSkill] = true 
+		}
+		if skill != "" && !unique[skill] {
+			continue
 		}
 		skills := make([]string, 0, len(unique))
-		for skill := range unique {
-			skills = append(skills, skill)
+		for jobSkill := range unique {
+			skillCount[jobSkill]++
+			skills = append(skills, jobSkill)
 		}
 		// sort the list
 		sort.Strings(skills) 
@@ -39,19 +43,21 @@ func AnalyzeSkillPair(jobs []Job, sc SkillCategories) NetworkGraphData {
     SkillPair{"Go","Docker"}] = 2
 		SkillPair{"skill1", "skill2"}] = cooccurrence_count
 		*/
-		for i:=0; i<len(skills); i++ {
-			for j:=i+1; j<len(skills); j++ {
-				pair := SkillPair {
-					Skill1: skills[i],
-					Skill2: skills[j],
-				}
-				pairCount[pair]++
+		for _, other := range skills {
+			if other == skill {
+				continue 
 			}
+			pair := SkillPair {
+				Skill1: skill,
+				Skill2: other, 
+			}
+			pairCount[pair]++
 		}
 	}
 	// build the nodes list
 	nodes := make([]Node, 0, len(skillCount))
 	for skill, count := range skillCount {
+		totalSkills = append(totalSkills, skill)
 		ref := md[skill]
 		nodes = append(nodes, Node{
 			SkillID: skill,
@@ -69,7 +75,9 @@ func AnalyzeSkillPair(jobs []Job, sc SkillCategories) NetworkGraphData {
 			Count: count,
 		})
 	}
-	return NetworkGraphData{
+	return NetworkGraphDataResponse{
+		Skill: skill,
+		TotalSkills: totalSkills,
 		Nodes: nodes,
 		Links:links, 
 	}
@@ -82,6 +90,7 @@ func (h *TaskHandler) GetSkillGraph(w http.ResponseWriter, r *http.Request) {
 	seniority := r.URL.Query().Get("seniority")
 	month := r.URL.Query().Get("month")
 	year := r.URL.Query().Get("year")
+	skill := r.URL.Query().Get("skill")
 
 	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", location, year, month, role, seniority)
 	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
@@ -94,7 +103,7 @@ func (h *TaskHandler) GetSkillGraph(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "500 error, could not find skillref filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
-	networkGraph := AnalyzeSkillPair(jobs, sc)
+	networkGraph := AnalyzeSkillPair(jobs, sc, skill)
 	// write to json
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(networkGraph)

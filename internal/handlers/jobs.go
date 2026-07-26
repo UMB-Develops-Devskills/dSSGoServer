@@ -28,6 +28,24 @@ func DownloadJobs(ctx context.Context, client *storage.Client, bucketName string
 	return jf.Jobs, nil
 }
 
+// this function downloads the history files from firebase as a historyfile
+func DownloadHistory(ctx context.Context, client *storage.Client, bucketName string, filepath string) (HistoryFile, error) {
+	bkt := client.Bucket(bucketName)
+	object := bkt.Object(filepath)
+
+	reader, err := object.NewReader(ctx) 
+	if err != nil {
+		return HistoryFile{}, err
+	}
+	defer reader.Close()
+	var hf HistoryFile
+	err = json.NewDecoder(reader).Decode(&hf)
+	if err != nil {
+		return HistoryFile{}, err
+	}
+	return hf, nil
+}
+
 // this function uploads file to the given filepath
 func UploadFile(ctx context.Context, client *storage.Client, bucketName, filepath string, data []byte) error {
 	bkt := client.Bucket(bucketName) 
