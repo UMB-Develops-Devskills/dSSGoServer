@@ -39,7 +39,7 @@ func FindSkill(sc SkillCategories, skill string) *SkillRefData {
 }
 
 // this function analyzes the []jobs and the skillsref.json file and returns a skilltrendresponse struct to display skills, specific skill counts and total count of skills. 
-func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category string, subcat string) (SkillTrendResponse) {
+func AnalyzeSkills(jobs []Job, sc SkillCategories, skill string, category string, subcat string) (SkillTrendResponse) {
 	counts := make(map[string] int)
 	md := make(map[string]SkillRefData) // metadata map of skills referenced
 	var trends []SkillTrend
@@ -48,8 +48,8 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category strin
 	}
 	totalCount := 0
 	for _, job := range jobs {
-		for _, skill := range job.Skills {
-			ref, ok := md[skill]
+		for _, jobSkill := range job.Skills {
+			ref, ok := md[jobSkill]
 			if !ok {
 				continue
 			}
@@ -62,7 +62,7 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category strin
 			if subcat != "" && ref.Subcategory != subcat {
 				continue
 			}
-			counts[skill]++
+			counts[jobSkill]++
 			totalCount++
 		}
 	}
@@ -78,6 +78,7 @@ func AnalayzeSkills(jobs []Job, sc SkillCategories, skill string, category strin
 		})
 	}
 	return SkillTrendResponse {
+		Skill: skill, 
 		TotalCount: totalCount, 
 		TotalSkills: totalSkills,
 		Trends: trends, 
@@ -100,15 +101,15 @@ func (h *TaskHandler) GetSkillTrends(w http.ResponseWriter, r *http.Request) {
 	filepath := fmt.Sprintf("jobs/%s/year%s/%s/%s/%s-jobs.json", location, year, month, role, seniority)
 	jobs, err := DownloadJobs(r.Context(), h.Storage, bucketName, filepath)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "500 error, could not find jobs filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
 	sc, err := DownloadSkillRef(r.Context(), h.Storage, bucketName, "metadata/skillRef.json")
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "500 error, could not find skillref filepath to firebase " + err.Error(), http.StatusInternalServerError)
 		return
 	}
-	trends := AnalayzeSkills(jobs, sc, skill, category, subcategory)
+	trends := AnalyzeSkills(jobs, sc, skill, category, subcategory)
 	// write to json
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(trends)

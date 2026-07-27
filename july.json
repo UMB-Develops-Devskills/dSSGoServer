@@ -1,0 +1,1080 @@
+{
+  "location": "california",
+  "year": "2026",
+  "month": "july",
+  "total_jobs": 437,
+  "skills": [
+    {
+      "skill": "React",
+      "count": 129
+    },
+    {
+      "skill": "Ruby on Rails",
+      "count": 5
+    },
+    {
+      "skill": "Customer Service",
+      "count": 1
+    },
+    {
+      "skill": "Talent Acquisition",
+      "count": 1
+    },
+    {
+      "skill": "JavaScript",
+      "count": 86
+    },
+    {
+      "skill": "Problem Solving",
+      "count": 3
+    },
+    {
+      "skill": "Security",
+      "count": 2
+    },
+    {
+      "skill": "NumPy",
+      "count": 6
+    },
+    {
+      "skill": "iOS",
+      "count": 4
+    },
+    {
+      "skill": "macOS",
+      "count": 1
+    },
+    {
+      "skill": "SOAP",
+      "count": 3
+    },
+    {
+      "skill": "Networking",
+      "count": 5
+    },
+    {
+      "skill": "Microsoft 365",
+      "count": 4
+    },
+    {
+      "skill": "Android",
+      "count": 18
+    },
+    {
+      "skill": "VHDL",
+      "count": 1
+    },
+    {
+      "skill": "Erlang",
+      "count": 1
+    },
+    {
+      "skill": "JIRA",
+      "count": 13
+    },
+    {
+      "skill": "AngularJS",
+      "count": 6
+    },
+    {
+      "skill": "Bash",
+      "count": 19
+    },
+    {
+      "skill": "SQL Server",
+      "count": 12
+    },
+    {
+      "skill": "Vue.js",
+      "count": 19
+    },
+    {
+      "skill": "Teamwork",
+      "count": 1
+    },
+    {
+      "skill": "Outlook",
+      "count": 1
+    },
+    {
+      "skill": "AWS",
+      "count": 112
+    },
+    {
+      "skill": "Data Warehousing",
+      "count": 1
+    },
+    {
+      "skill": "HIPAA",
+      "count": 2
+    },
+    {
+      "skill": "OpenTelemetry",
+      "count": 1
+    },
+    {
+      "skill": "Technical Support",
+      "count": 1
+    },
+    {
+      "skill": "Leadership",
+      "count": 1
+    },
+    {
+      "skill": "Kotlin",
+      "count": 27
+    },
+    {
+      "skill": "Databricks",
+      "count": 4
+    },
+    {
+      "skill": "Google Workspace",
+      "count": 1
+    },
+    {
+      "skill": "Dart",
+      "count": 1
+    },
+    {
+      "skill": "CloudWatch",
+      "count": 3
+    },
+    {
+      "skill": "Ethernet",
+      "count": 4
+    },
+    {
+      "skill": "React Native",
+      "count": 10
+    },
+    {
+      "skill": "gRPC",
+      "count": 18
+    },
+    {
+      "skill": "ITIL",
+      "count": 1
+    },
+    {
+      "skill": "Tableau",
+      "count": 2
+    },
+    {
+      "skill": "IBM Cloud",
+      "count": 1
+    },
+    {
+      "skill": "ServiceNow",
+      "count": 1
+    },
+    {
+      "skill": "Playwright",
+      "count": 5
+    },
+    {
+      "skill": "PHP",
+      "count": 7
+    },
+    {
+      "skill": "LangChain",
+      "count": 7
+    },
+    {
+      "skill": "TensorFlow",
+      "count": 17
+    },
+    {
+      "skill": "FPGA",
+      "count": 1
+    },
+    {
+      "skill": "Computer Vision",
+      "count": 7
+    },
+    {
+      "skill": "Gatsby",
+      "count": 1
+    },
+    {
+      "skill": "MySQL",
+      "count": 37
+    },
+    {
+      "skill": "Node.js",
+      "count": 48
+    },
+    {
+      "skill": "Xamarin",
+      "count": 2
+    },
+    {
+      "skill": "Haskell",
+      "count": 2
+    },
+    {
+      "skill": "PL/SQL",
+      "count": 1
+    },
+    {
+      "skill": "Big Data",
+      "count": 1
+    },
+    {
+      "skill": "SRE",
+      "count": 1
+    },
+    {
+      "skill": "Kinesis",
+      "count": 1
+    },
+    {
+      "skill": "PLC",
+      "count": 1
+    },
+    {
+      "skill": "OSPF",
+      "count": 1
+    },
+    {
+      "skill": "Power BI",
+      "count": 2
+    },
+    {
+      "skill": "NLP",
+      "count": 1
+    },
+    {
+      "skill": "SQLite",
+      "count": 2
+    },
+    {
+      "skill": "EC2",
+      "count": 1
+    },
+    {
+      "skill": "Deno",
+      "count": 1
+    },
+    {
+      "skill": "Redis",
+      "count": 16
+    },
+    {
+      "skill": "Microservices",
+      "count": 40
+    },
+    {
+      "skill": "Bootstrap",
+      "count": 2
+    },
+    {
+      "skill": "Generative AI",
+      "count": 13
+    },
+    {
+      "skill": "Frontend",
+      "count": 120
+    },
+    {
+      "skill": "Attention to Detail",
+      "count": 1
+    },
+    {
+      "skill": "Express.js",
+      "count": 6
+    },
+    {
+      "skill": "GDPR",
+      "count": 2
+    },
+    {
+      "skill": "PyTorch",
+      "count": 21
+    },
+    {
+      "skill": "Verilog",
+      "count": 1
+    },
+    {
+      "skill": "Adaptability",
+      "count": 1
+    },
+    {
+      "skill": "CI/CD",
+      "count": 39
+    },
+    {
+      "skill": "API",
+      "count": 100
+    },
+    {
+      "skill": "Tailwind CSS",
+      "count": 5
+    },
+    {
+      "skill": "JUnit",
+      "count": 2
+    },
+    {
+      "skill": "Confluence",
+      "count": 4
+    },
+    {
+      "skill": "Assembly",
+      "count": 8
+    },
+    {
+      "skill": "Python",
+      "count": 210
+    },
+    {
+      "skill": "REST",
+      "count": 28
+    },
+    {
+      "skill": "Azure",
+      "count": 57
+    },
+    {
+      "skill": "Civil Engineering",
+      "count": 1
+    },
+    {
+      "skill": "Negotiation",
+      "count": 1
+    },
+    {
+      "skill": "Ember.js",
+      "count": 1
+    },
+    {
+      "skill": "PostgreSQL",
+      "count": 67
+    },
+    {
+      "skill": "Flutter",
+      "count": 4
+    },
+    {
+      "skill": "Figma",
+      "count": 4
+    },
+    {
+      "skill": "Kanban",
+      "count": 1
+    },
+    {
+      "skill": "Spark",
+      "count": 37
+    },
+    {
+      "skill": "QA",
+      "count": 6
+    },
+    {
+      "skill": "Shell",
+      "count": 5
+    },
+    {
+      "skill": "Laravel",
+      "count": 1
+    },
+    {
+      "skill": "MongoDB",
+      "count": 30
+    },
+    {
+      "skill": "Unity",
+      "count": 2
+    },
+    {
+      "skill": "Mechanical Engineering",
+      "count": 1
+    },
+    {
+      "skill": "SQS",
+      "count": 5
+    },
+    {
+      "skill": "Critical Thinking",
+      "count": 1
+    },
+    {
+      "skill": "FullStack",
+      "count": 82
+    },
+    {
+      "skill": "Data",
+      "count": 6
+    },
+    {
+      "skill": "CSS",
+      "count": 38
+    },
+    {
+      "skill": "RAG",
+      "count": 4
+    },
+    {
+      "skill": "Chef",
+      "count": 2
+    },
+    {
+      "skill": "Oracle",
+      "count": 16
+    },
+    {
+      "skill": "dbt",
+      "count": 1
+    },
+    {
+      "skill": "Electrical Engineering",
+      "count": 1
+    },
+    {
+      "skill": "Symfony",
+      "count": 1
+    },
+    {
+      "skill": "Lambda",
+      "count": 4
+    },
+    {
+      "skill": "OAuth",
+      "count": 6
+    },
+    {
+      "skill": "Scikit-learn",
+      "count": 3
+    },
+    {
+      "skill": "Swift",
+      "count": 13
+    },
+    {
+      "skill": "Mobile",
+      "count": 3
+    },
+    {
+      "skill": "BGP",
+      "count": 3
+    },
+    {
+      "skill": "Supply Chain Management",
+      "count": 1
+    },
+    {
+      "skill": "Ruby",
+      "count": 7
+    },
+    {
+      "skill": "Redux",
+      "count": 10
+    },
+    {
+      "skill": "MariaDB",
+      "count": 2
+    },
+    {
+      "skill": "Datadog",
+      "count": 8
+    },
+    {
+      "skill": "AI",
+      "count": 113
+    },
+    {
+      "skill": "Gradle",
+      "count": 7
+    },
+    {
+      "skill": "Machine Learning",
+      "count": 158
+    },
+    {
+      "skill": "GitHub",
+      "count": 10
+    },
+    {
+      "skill": "Julia",
+      "count": 2
+    },
+    {
+      "skill": "Yarn",
+      "count": 1
+    },
+    {
+      "skill": "LDAP",
+      "count": 1
+    },
+    {
+      "skill": "SEO",
+      "count": 1
+    },
+    {
+      "skill": "SEM",
+      "count": 1
+    },
+    {
+      "skill": "ECS",
+      "count": 1
+    },
+    {
+      "skill": "Backend",
+      "count": 190
+    },
+    {
+      "skill": "Embedded Systems",
+      "count": 2
+    },
+    {
+      "skill": "Vendor Management",
+      "count": 1
+    },
+    {
+      "skill": "Clojure",
+      "count": 1
+    },
+    {
+      "skill": "Heroku",
+      "count": 1
+    },
+    {
+      "skill": "Nuxt.js",
+      "count": 1
+    },
+    {
+      "skill": "Excel",
+      "count": 4
+    },
+    {
+      "skill": "Data Science",
+      "count": 5
+    },
+    {
+      "skill": "Jest",
+      "count": 5
+    },
+    {
+      "skill": "Agile",
+      "count": 34
+    },
+    {
+      "skill": "DevOps",
+      "count": 58
+    },
+    {
+      "skill": "SharePoint",
+      "count": 1
+    },
+    {
+      "skill": "ERP",
+      "count": 3
+    },
+    {
+      "skill": "data",
+      "count": 1
+    },
+    {
+      "skill": "CircleCI",
+      "count": 3
+    },
+    {
+      "skill": "ETL",
+      "count": 2
+    },
+    {
+      "skill": "Kafka",
+      "count": 27
+    },
+    {
+      "skill": "Objective-C",
+      "count": 4
+    },
+    {
+      "skill": "RabbitMQ",
+      "count": 5
+    },
+    {
+      "skill": "Apex",
+      "count": 1
+    },
+    {
+      "skill": "HTTP",
+      "count": 2
+    },
+    {
+      "skill": "Couchbase",
+      "count": 2
+    },
+    {
+      "skill": "Docker",
+      "count": 73
+    },
+    {
+      "skill": "Rust",
+      "count": 23
+    },
+    {
+      "skill": "Process Improvement",
+      "count": 3
+    },
+    {
+      "skill": "Pandas",
+      "count": 4
+    },
+    {
+      "skill": "Svelte",
+      "count": 3
+    },
+    {
+      "skill": "Collaboration",
+      "count": 1
+    },
+    {
+      "skill": "Active Directory",
+      "count": 1
+    },
+    {
+      "skill": "OpenAI",
+      "count": 9
+    },
+    {
+      "skill": "Microsoft Teams",
+      "count": 2
+    },
+    {
+      "skill": "GitHub Actions",
+      "count": 11
+    },
+    {
+      "skill": "Data Engineering",
+      "count": 2
+    },
+    {
+      "skill": "Matlab",
+      "count": 3
+    },
+    {
+      "skill": "Oracle Cloud",
+      "count": 1
+    },
+    {
+      "skill": "Terraform",
+      "count": 22
+    },
+    {
+      "skill": "Angular",
+      "count": 28
+    },
+    {
+      "skill": "Communication",
+      "count": 1
+    },
+    {
+      "skill": "Time Management",
+      "count": 1
+    },
+    {
+      "skill": "Qlik",
+      "count": 1
+    },
+    {
+      "skill": "Word",
+      "count": 2
+    },
+    {
+      "skill": "Unreal",
+      "count": 1
+    },
+    {
+      "skill": "Firebase",
+      "count": 1
+    },
+    {
+      "skill": "Django",
+      "count": 13
+    },
+    {
+      "skill": "jQuery",
+      "count": 2
+    },
+    {
+      "skill": "Jenkins",
+      "count": 6
+    },
+    {
+      "skill": "Groovy",
+      "count": 2
+    },
+    {
+      "skill": "IAM",
+      "count": 3
+    },
+    {
+      "skill": "GitLab",
+      "count": 1
+    },
+    {
+      "skill": "NIST",
+      "count": 1
+    },
+    {
+      "skill": "GCP",
+      "count": 50
+    },
+    {
+      "skill": "Slack",
+      "count": 3
+    },
+    {
+      "skill": "Elixir",
+      "count": 2
+    },
+    {
+      "skill": "C",
+      "count": 16
+    },
+    {
+      "skill": "GraphQL",
+      "count": 27
+    },
+    {
+      "skill": "NoSQL",
+      "count": 10
+    },
+    {
+      "skill": "Cloud Computing",
+      "count": 6
+    },
+    {
+      "skill": "Flask",
+      "count": 9
+    },
+    {
+      "skill": "Qt",
+      "count": 2
+    },
+    {
+      "skill": "Airflow",
+      "count": 2
+    },
+    {
+      "skill": "Redshift",
+      "count": 1
+    },
+    {
+      "skill": "SPI",
+      "count": 2
+    },
+    {
+      "skill": "Microsoft Dynamics",
+      "count": 2
+    },
+    {
+      "skill": "Hibernate",
+      "count": 1
+    },
+    {
+      "skill": "Prometheus",
+      "count": 5
+    },
+    {
+      "skill": "C#",
+      "count": 39
+    },
+    {
+      "skill": "Git",
+      "count": 65
+    },
+    {
+      "skill": "Maven",
+      "count": 4
+    },
+    {
+      "skill": "Selenium",
+      "count": 3
+    },
+    {
+      "skill": "Kubernetes",
+      "count": 87
+    },
+    {
+      "skill": "Java",
+      "count": 114
+    },
+    {
+      "skill": "TypeScript",
+      "count": 91
+    },
+    {
+      "skill": "Next.js",
+      "count": 18
+    },
+    {
+      "skill": "Scala",
+      "count": 21
+    },
+    {
+      "skill": "Go",
+      "count": 73
+    },
+    {
+      "skill": "Spring Boot",
+      "count": 16
+    },
+    {
+      "skill": "DynamoDB",
+      "count": 14
+    },
+    {
+      "skill": "Linux",
+      "count": 22
+    },
+    {
+      "skill": "SAS",
+      "count": 2
+    },
+    {
+      "skill": "Cypress",
+      "count": 4
+    },
+    {
+      "skill": "Keras",
+      "count": 4
+    },
+    {
+      "skill": "Looker",
+      "count": 1
+    },
+    {
+      "skill": "DigitalOcean",
+      "count": 1
+    },
+    {
+      "skill": "Windows",
+      "count": 7
+    },
+    {
+      "skill": "FastAPI",
+      "count": 10
+    },
+    {
+      "skill": "Infrastructure",
+      "count": 55
+    },
+    {
+      "skill": "Logistics",
+      "count": 1
+    },
+    {
+      "skill": "CompTIA Security+",
+      "count": 1
+    },
+    {
+      "skill": "Perl",
+      "count": 6
+    },
+    {
+      "skill": "OpenCV",
+      "count": 1
+    },
+    {
+      "skill": ".NET",
+      "count": 13
+    },
+    {
+      "skill": "Ansible",
+      "count": 12
+    },
+    {
+      "skill": "LLM",
+      "count": 14
+    },
+    {
+      "skill": "NetSuite",
+      "count": 1
+    },
+    {
+      "skill": "Helm",
+      "count": 2
+    },
+    {
+      "skill": "CRM",
+      "count": 1
+    },
+    {
+      "skill": "RDS",
+      "count": 1
+    },
+    {
+      "skill": "HTML",
+      "count": 32
+    },
+    {
+      "skill": "Cassandra",
+      "count": 10
+    },
+    {
+      "skill": "English",
+      "count": 1
+    },
+    {
+      "skill": "XML",
+      "count": 6
+    },
+    {
+      "skill": "Unix",
+      "count": 2
+    },
+    {
+      "skill": "S3",
+      "count": 2
+    },
+    {
+      "skill": "GitLab CI",
+      "count": 2
+    },
+    {
+      "skill": "SAML",
+      "count": 3
+    },
+    {
+      "skill": "Procurement",
+      "count": 1
+    },
+    {
+      "skill": "Cybersecurity",
+      "count": 3
+    },
+    {
+      "skill": "Hugging Face",
+      "count": 2
+    },
+    {
+      "skill": "Cordova",
+      "count": 1
+    },
+    {
+      "skill": "SQL",
+      "count": 84
+    },
+    {
+      "skill": "Deep Learning",
+      "count": 28
+    },
+    {
+      "skill": "TCP/IP",
+      "count": 3
+    },
+    {
+      "skill": "JSON",
+      "count": 4
+    },
+    {
+      "skill": "Scrum",
+      "count": 8
+    },
+    {
+      "skill": "I2C",
+      "count": 2
+    },
+    {
+      "skill": "Snowflake",
+      "count": 11
+    },
+    {
+      "skill": "T-SQL",
+      "count": 2
+    },
+    {
+      "skill": "Salesforce",
+      "count": 5
+    },
+    {
+      "skill": "Lisp",
+      "count": 1
+    },
+    {
+      "skill": "VMware",
+      "count": 3
+    },
+    {
+      "skill": "C++",
+      "count": 125
+    },
+    {
+      "skill": "Spring",
+      "count": 15
+    },
+    {
+      "skill": "Hadoop",
+      "count": 5
+    },
+    {
+      "skill": "Puppet",
+      "count": 3
+    },
+    {
+      "skill": "VBA",
+      "count": 3
+    },
+    {
+      "skill": "R",
+      "count": 15
+    },
+    {
+      "skill": "SAP",
+      "count": 2
+    },
+    {
+      "skill": "OpenShift",
+      "count": 2
+    },
+    {
+      "skill": "Grafana",
+      "count": 3
+    },
+    {
+      "skill": "PowerShell",
+      "count": 2
+    },
+    {
+      "skill": "ASP.NET",
+      "count": 2
+    },
+    {
+      "skill": "EKS",
+      "count": 1
+    },
+    {
+      "skill": "Elasticsearch",
+      "count": 25
+    },
+    {
+      "skill": "Auditing",
+      "count": 1
+    },
+    {
+      "skill": "Bitbucket",
+      "count": 2
+    },
+    {
+      "skill": "IoT",
+      "count": 1
+    },
+    {
+      "skill": "Project Management",
+      "count": 3
+    },
+    {
+      "skill": "AJAX",
+      "count": 1
+    },
+    {
+      "skill": "F#",
+      "count": 1
+    }
+  ]
+}
