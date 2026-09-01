@@ -1,5 +1,8 @@
 .env
-firebase-service-account.json
-.env
-*.json
-__pycache__/
+data
+
+# firebase secrets
+service-account-key.json
+
+#shell script
+pipe.sh
